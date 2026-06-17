@@ -1,0 +1,1690 @@
+{
+  "configuration" : { },
+  "description" : "Modelo C4 basado en el documento App de Transporte",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedDate" : "2026-06-17T22:52:13Z",
+  "model" : {
+    "people" : [ {
+      "description" : "Consulta y monitorea la operación en tiempo real.",
+      "id" : "1",
+      "name" : "Líder de Transporte",
+      "properties" : {
+        "structurizr.dsl.identifier" : "lider"
+      },
+      "relationships" : [ {
+        "description" : "Consulta operación",
+        "destinationId" : "48",
+        "id" : "49",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Consulta operación",
+        "destinationId" : "25",
+        "id" : "50",
+        "linkedRelationshipId" : "49",
+        "sourceId" : "1"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Monitorea la operación y gestiona disponibilidad de recursos.",
+      "id" : "2",
+      "name" : "Coordinador de Transporte",
+      "properties" : {
+        "structurizr.dsl.identifier" : "coordinador"
+      },
+      "relationships" : [ {
+        "description" : "Monitorea operación",
+        "destinationId" : "48",
+        "id" : "51",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Monitorea operación",
+        "destinationId" : "25",
+        "id" : "52",
+        "linkedRelationshipId" : "51",
+        "sourceId" : "2"
+      }, {
+        "description" : "Valida disponibilidad de recursos",
+        "destinationId" : "34",
+        "id" : "53",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Valida disponibilidad de recursos",
+        "destinationId" : "28",
+        "id" : "54",
+        "linkedRelationshipId" : "53",
+        "sourceId" : "2"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Valida documentación y monitorea la ejecución.",
+      "id" : "3",
+      "name" : "Supervisor de Transporte",
+      "properties" : {
+        "structurizr.dsl.identifier" : "supervisor"
+      },
+      "relationships" : [ {
+        "description" : "Valida documentación y monitorea",
+        "destinationId" : "26",
+        "id" : "57",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Valida documentación y monitorea",
+        "destinationId" : "25",
+        "id" : "58",
+        "linkedRelationshipId" : "57",
+        "sourceId" : "3"
+      }, {
+        "description" : "Aprueba o rechaza documentos",
+        "destinationId" : "31",
+        "id" : "59",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Aprueba o rechaza documentos",
+        "destinationId" : "28",
+        "id" : "60",
+        "linkedRelationshipId" : "59",
+        "sourceId" : "3"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Opera el manager: asigna unidades, tripulación, documentos e incidencias.",
+      "id" : "4",
+      "name" : "Analista de Transporte",
+      "properties" : {
+        "structurizr.dsl.identifier" : "analista"
+      },
+      "relationships" : [ {
+        "description" : "Gestiona asignaciones, documentos e incidencias",
+        "destinationId" : "26",
+        "id" : "61",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Gestiona asignaciones, documentos e incidencias",
+        "destinationId" : "25",
+        "id" : "62",
+        "linkedRelationshipId" : "61",
+        "sourceId" : "4"
+      }, {
+        "description" : "Asigna unidad y tripulación",
+        "destinationId" : "29",
+        "id" : "63",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Asigna unidad y tripulación",
+        "destinationId" : "28",
+        "id" : "64",
+        "linkedRelationshipId" : "63",
+        "sourceId" : "4"
+      }, {
+        "description" : "Carga documentación",
+        "destinationId" : "31",
+        "id" : "65",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Envía mensajes al chofer",
+        "destinationId" : "32",
+        "id" : "66",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Gestiona fallas y transbordos",
+        "destinationId" : "33",
+        "id" : "67",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Configura pedidos en SAP, asigna cortina y valida coordenadas, puede actualizar coordenadas  de pdv desde la plataforma.",
+      "id" : "5",
+      "name" : "Planeador Logístico",
+      "properties" : {
+        "structurizr.dsl.identifier" : "planeador"
+      },
+      "relationships" : [ {
+        "description" : "Consulta pedidos, asigna cortina y valida/actualiza coordenadas",
+        "destinationId" : "26",
+        "id" : "68",
+        "sourceId" : "5",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Consulta pedidos, asigna cortina y valida/actualiza coordenadas",
+        "destinationId" : "25",
+        "id" : "69",
+        "linkedRelationshipId" : "68",
+        "sourceId" : "5"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Ejecuta movimiento a cortina y envío a resguardo.",
+      "id" : "6",
+      "name" : "Auxiliar de Patio",
+      "properties" : {
+        "structurizr.dsl.identifier" : "auxiliar"
+      },
+      "relationships" : [ {
+        "description" : "Ejecuta movimientos de patio",
+        "destinationId" : "26",
+        "id" : "70",
+        "sourceId" : "6",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Ejecuta movimientos de patio",
+        "destinationId" : "25",
+        "id" : "71",
+        "linkedRelationshipId" : "70",
+        "sourceId" : "6"
+      }, {
+        "description" : "Opera movimientos en patio",
+        "destinationId" : "30",
+        "id" : "72",
+        "sourceId" : "6",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Opera movimientos en patio",
+        "destinationId" : "28",
+        "id" : "73",
+        "linkedRelationshipId" : "72",
+        "sourceId" : "6"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Consulta ruta/actualiza coordenadas.",
+      "id" : "7",
+      "name" : "Chofer",
+      "properties" : {
+        "structurizr.dsl.identifier" : "chofer"
+      },
+      "relationships" : [ {
+        "description" : "Inicia sesión, consulta ruta y actualiza coordenadas",
+        "destinationId" : "27",
+        "id" : "74",
+        "sourceId" : "7",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Inicia sesión, consulta ruta y actualiza coordenadas",
+        "destinationId" : "25",
+        "id" : "75",
+        "linkedRelationshipId" : "74",
+        "sourceId" : "7"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Consulta el dashboard y seguimiento operativo.",
+      "id" : "8",
+      "name" : "Gerente de Logística",
+      "properties" : {
+        "structurizr.dsl.identifier" : "gerente"
+      },
+      "relationships" : [ {
+        "description" : "Consulta indicadores y seguimiento",
+        "destinationId" : "48",
+        "id" : "55",
+        "sourceId" : "8",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Consulta indicadores y seguimiento",
+        "destinationId" : "25",
+        "id" : "56",
+        "linkedRelationshipId" : "55",
+        "sourceId" : "8"
+      } ],
+      "tags" : "Element,Person,,\"actualiza\""
+    }, {
+      "description" : "Recibe notificaciones internas y da seguimiento a salidas/incidencias.",
+      "id" : "9",
+      "name" : "Área de Tráfico",
+      "properties" : {
+        "structurizr.dsl.identifier" : "trafico"
+      },
+      "relationships" : [ {
+        "description" : "Da seguimiento operativo",
+        "destinationId" : "48",
+        "id" : "86",
+        "sourceId" : "9",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Da seguimiento operativo",
+        "destinationId" : "25",
+        "id" : "87",
+        "linkedRelationshipId" : "86",
+        "sourceId" : "9"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Valida condición operativa de unidades con falla.",
+      "id" : "10",
+      "name" : "Área de Taller",
+      "properties" : {
+        "structurizr.dsl.identifier" : "taller"
+      },
+      "relationships" : [ {
+        "description" : "Valida condición de unidad",
+        "destinationId" : "26",
+        "id" : "89",
+        "sourceId" : "10",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Valida condición de unidad",
+        "destinationId" : "25",
+        "id" : "90",
+        "linkedRelationshipId" : "89",
+        "sourceId" : "10"
+      } ],
+      "tags" : "Element,Person"
+    }, {
+      "description" : "Recibe notificaciones de salida y asigna chofer para unidades fleteras.",
+      "id" : "11",
+      "name" : "Proveedor Fletero",
+      "properties" : {
+        "structurizr.dsl.identifier" : "fletera"
+      },
+      "relationships" : [ {
+        "description" : "Recibe aviso de ruta/salida",
+        "destinationId" : "23",
+        "id" : "88",
+        "sourceId" : "11",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person"
+    } ],
+    "softwareSystems" : [ {
+      "description" : "Sistema maestro para pedidos, catálogos, estatus operativos, documentos y eventos de salida/carga.",
+      "documentation" : { },
+      "id" : "12",
+      "name" : "SAP",
+      "properties" : {
+        "structurizr.dsl.identifier" : "sap"
+      },
+      "relationships" : [ {
+        "description" : "Sincroniza información de rutas, clientes",
+        "destinationId" : "42",
+        "id" : "104",
+        "sourceId" : "12",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Sincroniza información de rutas, clientes",
+        "destinationId" : "28",
+        "id" : "105",
+        "linkedRelationshipId" : "104",
+        "sourceId" : "12"
+      }, {
+        "description" : "Sincroniza información de rutas, clientes",
+        "destinationId" : "25",
+        "id" : "106",
+        "linkedRelationshipId" : "104",
+        "sourceId" : "12"
+      }, {
+        "description" : "Confirma actualización",
+        "destinationId" : "15",
+        "id" : "115",
+        "sourceId" : "12",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Confirma actualización",
+        "destinationId" : "13",
+        "id" : "116",
+        "linkedRelationshipId" : "115",
+        "sourceId" : "12"
+      }, {
+        "description" : "Confirma resultado de actualización",
+        "destinationId" : "19",
+        "id" : "174",
+        "sourceId" : "12",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Envía asignación de chofer, transporte, ruta, clientes e interlocutores",
+        "destinationId" : "43",
+        "id" : "175",
+        "sourceId" : "12",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "containers" : [ {
+        "description" : "Interfaz para revisar solicitudes y aprobar o rechazar cambios.",
+        "documentation" : { },
+        "id" : "14",
+        "name" : "Portal Web Crédito y Cobranza",
+        "properties" : {
+          "structurizr.dsl.identifier" : "ccweb"
+        },
+        "relationships" : [ {
+          "description" : "Consulta y valida solicitudes",
+          "destinationId" : "15",
+          "id" : "110",
+          "sourceId" : "14",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Captura manualmente o valida solicitudes de actualización de coordenadas",
+          "destinationId" : "15",
+          "id" : "111",
+          "sourceId" : "14",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Web App"
+      }, {
+        "components" : [ {
+          "description" : "Recibe la solicitud enviada desde Transporte y valida estructura, campos obligatorios y contexto mínimo.",
+          "documentation" : { },
+          "id" : "16",
+          "name" : "Módulo de Recepción de Solicitudes",
+          "properties" : {
+            "structurizr.dsl.identifier" : "recepcion"
+          },
+          "relationships" : [ {
+            "description" : "Registra solicitud recibida",
+            "destinationId" : "20",
+            "id" : "149",
+            "sourceId" : "16",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Canaliza solicitud para revisión",
+            "destinationId" : "17",
+            "id" : "150",
+            "sourceId" : "16",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Guarda solicitud inicial",
+            "destinationId" : "21",
+            "id" : "173",
+            "sourceId" : "16",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        }, {
+          "description" : "Gestiona la aprobación o rechazo de actualizaciones de coordenadas que requieren validación.",
+          "documentation" : { },
+          "id" : "17",
+          "name" : "Módulo de Gestión de Solicitudes de Coordenadas",
+          "properties" : {
+            "structurizr.dsl.identifier" : "validacion"
+          },
+          "relationships" : [ {
+            "description" : "Actualiza estatus y comentarios",
+            "destinationId" : "20",
+            "id" : "151",
+            "sourceId" : "17",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Publica coordenada aprobada para envío a SAP",
+            "destinationId" : "18",
+            "id" : "152",
+            "sourceId" : "17",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Consulta solicitud y estatus",
+            "destinationId" : "21",
+            "id" : "172",
+            "sourceId" : "17",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        }, {
+          "description" : "Guarda coordenadas aprobadas pendientes de enviar a SAP, controla reintentos, errores e idempotencia para evitar pérdida o duplicidad de actualizaciones.",
+          "documentation" : { },
+          "id" : "18",
+          "name" : "Módulo de Pendientes de Envío a SAP / Outbox",
+          "properties" : {
+            "structurizr.dsl.identifier" : "pendientesSap"
+          },
+          "relationships" : [ {
+            "description" : "Entrega coordenadas aprobadas pendientes de envío",
+            "destinationId" : "19",
+            "id" : "153",
+            "sourceId" : "18",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Persiste eventos pendientes, intentos, errores y estatus de integración",
+            "destinationId" : "21",
+            "id" : "154",
+            "sourceId" : "18",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Worker Module"
+        }, {
+          "description" : "Envía a SAP las coordenadas aprobadas y procesa la respuesta de confirmación.",
+          "documentation" : { },
+          "id" : "19",
+          "name" : "Módulo de Integración SAP",
+          "properties" : {
+            "structurizr.dsl.identifier" : "integracionSap"
+          },
+          "relationships" : [ {
+            "description" : "Actualiza estatus de envío, error o reintento",
+            "destinationId" : "18",
+            "id" : "155",
+            "sourceId" : "19",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Envía actualización aprobada",
+            "destinationId" : "12",
+            "id" : "169",
+            "sourceId" : "19",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Actualiza resultado de integración",
+            "destinationId" : "21",
+            "id" : "170",
+            "sourceId" : "19",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Worker Module"
+        }, {
+          "description" : "Registra estatus, comentarios, usuario, fecha, coordenadas actuales, coordenadas nuevas y resultado de integración.",
+          "documentation" : { },
+          "id" : "20",
+          "name" : "Módulo de Trazabilidad",
+          "properties" : {
+            "structurizr.dsl.identifier" : "trazabilidad"
+          },
+          "relationships" : [ {
+            "description" : "Guarda y consulta trazabilidad",
+            "destinationId" : "21",
+            "id" : "171",
+            "sourceId" : "20",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        } ],
+        "description" : "Recibe solicitudes de coordenadas, gestiona validación y envía actualizaciones aprobadas a SAP.",
+        "documentation" : { },
+        "id" : "15",
+        "name" : "API Manager Crédito y Cobranza",
+        "properties" : {
+          "structurizr.dsl.identifier" : "ccapi"
+        },
+        "relationships" : [ {
+          "description" : "Guarda y consulta solicitudes",
+          "destinationId" : "21",
+          "id" : "112",
+          "sourceId" : "15",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Envía coordenadas aprobadas",
+          "destinationId" : "12",
+          "id" : "113",
+          "sourceId" : "15",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "API"
+      }, {
+        "description" : "Almacena solicitudes, coordenadas actuales, coordenadas propuestas, estatus, comentarios y trazabilidad.",
+        "documentation" : { },
+        "id" : "21",
+        "name" : "Base de Datos Manager Crédito y Cobranza",
+        "properties" : {
+          "structurizr.dsl.identifier" : "ccdb"
+        },
+        "tags" : "Element,Container,Database",
+        "technology" : "Database"
+      } ],
+      "description" : "Plataforma del área de Crédito y Cobranza para revisar, autorizar o rechazar solicitudes y actualizar coordenadas aprobadas en SAP.",
+      "documentation" : { },
+      "id" : "13",
+      "name" : "Manager de Crédito y Cobranza",
+      "properties" : {
+        "structurizr.dsl.identifier" : "managerCredito_cobranza"
+      },
+      "relationships" : [ {
+        "description" : "Envía coordenadas aprobadas",
+        "destinationId" : "12",
+        "id" : "114",
+        "linkedRelationshipId" : "113",
+        "sourceId" : "13"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "Sistema fuente para consultar datos del chofer, como nombre, número de nómina y RFC.",
+      "documentation" : { },
+      "id" : "22",
+      "name" : "SICCOS",
+      "properties" : {
+        "structurizr.dsl.identifier" : "siccos"
+      },
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "Canal de notificación de rutas y salidas.",
+      "documentation" : { },
+      "id" : "23",
+      "name" : "WhatsApp / Proveedor de mensajería",
+      "properties" : {
+        "structurizr.dsl.identifier" : "whatsapp"
+      },
+      "tags" : "Element,Software System"
+    }, {
+      "description" : "Fuente de ubicación de unidades y coordenadas móviles.",
+      "documentation" : { },
+      "id" : "24",
+      "name" : "Servicio GPS / Geolocalización",
+      "properties" : {
+        "structurizr.dsl.identifier" : "gps"
+      },
+      "tags" : "Element,Software System"
+    }, {
+      "containers" : [ {
+        "description" : "Interfaz web para operación de transporte y administración, actualización de coordenados PDV.",
+        "documentation" : { },
+        "id" : "26",
+        "name" : "Aplicación Web / Manager",
+        "properties" : {
+          "structurizr.dsl.identifier" : "webapp"
+        },
+        "relationships" : [ {
+          "description" : "Usa/solicita actualización de coordenadas de PDV",
+          "destinationId" : "28",
+          "id" : "91",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Contiene / usa",
+          "destinationId" : "29",
+          "id" : "92",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Contiene / usa",
+          "destinationId" : "30",
+          "id" : "93",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Contiene / usa",
+          "destinationId" : "31",
+          "id" : "94",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Contiene / usa",
+          "destinationId" : "32",
+          "id" : "95",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Contiene / usa",
+          "destinationId" : "33",
+          "id" : "96",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Contiene / usa",
+          "destinationId" : "34",
+          "id" : "97",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Consulta",
+          "destinationId" : "35",
+          "id" : "98",
+          "sourceId" : "26",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Web App"
+      }, {
+        "description" : "Consulta de ruta, documentos, mensajes e incidencias.",
+        "documentation" : { },
+        "id" : "27",
+        "name" : "Aplicación Móvil de Chofer",
+        "properties" : {
+          "structurizr.dsl.identifier" : "mobile"
+        },
+        "relationships" : [ {
+          "description" : "Envía credenciales, consulta ruta y registra coordenadas GPS",
+          "destinationId" : "28",
+          "id" : "99",
+          "sourceId" : "27",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Envía nómina y RFC para iniciar sesión",
+          "destinationId" : "38",
+          "id" : "100",
+          "sourceId" : "27",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Envía coordenadas GPS propuestas",
+          "destinationId" : "37",
+          "id" : "101",
+          "sourceId" : "27",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Consulta transporte activo, ruta, clientes e interlocutores",
+          "destinationId" : "39",
+          "id" : "102",
+          "sourceId" : "27",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Obtiene ubicación actual del dispositivo",
+          "destinationId" : "24",
+          "id" : "136",
+          "sourceId" : "27",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Mobile App"
+      }, {
+        "components" : [ {
+          "description" : "Gestiona pedidos, asignación de unidad y tripulación, y registro de chofer fletero.",
+          "documentation" : { },
+          "id" : "29",
+          "name" : "Módulo de Asignaciones",
+          "properties" : {
+            "structurizr.dsl.identifier" : "asignaciones"
+          },
+          "relationships" : [ {
+            "description" : "Consulta catálogos y disponibilidad",
+            "destinationId" : "34",
+            "id" : "140",
+            "sourceId" : "29",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Registra asignaciones y cambios",
+            "destinationId" : "35",
+            "id" : "141",
+            "sourceId" : "29",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        }, {
+          "description" : "Controla notificación a patio, movimiento a cortina y envío a resguardo.",
+          "documentation" : { },
+          "id" : "30",
+          "name" : "Módulo de Operación en Patio",
+          "properties" : {
+            "structurizr.dsl.identifier" : "patio"
+          },
+          "relationships" : [ {
+            "description" : "Registra movimientos en patio",
+            "destinationId" : "35",
+            "id" : "142",
+            "sourceId" : "30",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        }, {
+          "description" : "Carga, validación y consulta de documentos de transporte.",
+          "documentation" : { },
+          "id" : "31",
+          "name" : "Módulo de Documentación",
+          "properties" : {
+            "structurizr.dsl.identifier" : "documental"
+          },
+          "relationships" : [ {
+            "description" : "Almacena archivos",
+            "destinationId" : "47",
+            "id" : "129",
+            "sourceId" : "31",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Registra eventos documentales",
+            "destinationId" : "35",
+            "id" : "130",
+            "sourceId" : "31",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Registra validaciones y cambios",
+            "destinationId" : "35",
+            "id" : "143",
+            "sourceId" : "31",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Almacena y recupera archivos",
+            "destinationId" : "47",
+            "id" : "144",
+            "sourceId" : "31",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        }, {
+          "description" : "Envía mensajes operativos y notificaciones de salida.",
+          "documentation" : { },
+          "id" : "32",
+          "name" : "Módulo de Mensajería y Notificaciones",
+          "properties" : {
+            "structurizr.dsl.identifier" : "mensajeria"
+          },
+          "relationships" : [ {
+            "description" : "Notifica salida/ruta",
+            "destinationId" : "23",
+            "id" : "131",
+            "sourceId" : "32",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Registra envío/lectura",
+            "destinationId" : "35",
+            "id" : "133",
+            "sourceId" : "32",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Registra envío, entrega y lectura",
+            "destinationId" : "35",
+            "id" : "145",
+            "sourceId" : "32",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        }, {
+          "description" : "Registra fallas, clasificación operativa y continuidad/transbordo.",
+          "documentation" : { },
+          "id" : "33",
+          "name" : "Módulo de Incidencias",
+          "properties" : {
+            "structurizr.dsl.identifier" : "incidencias"
+          },
+          "relationships" : [ {
+            "description" : "Registra fallas y decisiones",
+            "destinationId" : "35",
+            "id" : "134",
+            "sourceId" : "33",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Publica alertas",
+            "destinationId" : "36",
+            "id" : "135",
+            "sourceId" : "33",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Registra fallas, clasificación y decisiones",
+            "destinationId" : "35",
+            "id" : "146",
+            "sourceId" : "33",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Publica alertas e incidencias activas",
+            "destinationId" : "36",
+            "id" : "147",
+            "sourceId" : "33",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        }, {
+          "description" : "Gestiona choferes, ayudantes, vehículos, accesos fleteros y estatus.",
+          "documentation" : { },
+          "id" : "34",
+          "name" : "Módulo de Catálogos y Accesos",
+          "properties" : {
+            "structurizr.dsl.identifier" : "catalogos"
+          },
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        }, {
+          "description" : "Registra eventos, mensajes y trazabilidad del pedido.",
+          "documentation" : { },
+          "id" : "35",
+          "name" : "Módulo de Historial Operativo",
+          "properties" : {
+            "structurizr.dsl.identifier" : "historico"
+          },
+          "relationships" : [ {
+            "description" : "Persiste trazabilidad operativa",
+            "destinationId" : "45",
+            "id" : "168",
+            "sourceId" : "35",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        }, {
+          "description" : "Consolida operación, mapa, filtros, estatus y alertas.",
+          "documentation" : { },
+          "id" : "36",
+          "name" : "Módulo de Dashboard / Monitoreo",
+          "properties" : {
+            "structurizr.dsl.identifier" : "monitoreo"
+          },
+          "relationships" : [ {
+            "description" : "Consulta operación consolidada",
+            "destinationId" : "45",
+            "id" : "137",
+            "sourceId" : "36",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Consulta ubicación en tiempo real",
+            "destinationId" : "24",
+            "id" : "138",
+            "sourceId" : "36",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Consulta trazabilidad del pedido",
+            "destinationId" : "35",
+            "id" : "148",
+            "sourceId" : "36",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        }, {
+          "description" : "Gestiona actualización de coordenadas.  Canaliza solicitudes del chofer hacia la API del Manager.",
+          "documentation" : { },
+          "id" : "37",
+          "name" : "Módulo de Coordenadas",
+          "properties" : {
+            "structurizr.dsl.identifier" : "coordenadas"
+          },
+          "relationships" : [ {
+            "description" : "Valida que el cliente/interlocutor pertenezca a la ruta activa",
+            "destinationId" : "39",
+            "id" : "83",
+            "sourceId" : "37",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Guarda solicitud con estatus Pendiente de validación",
+            "destinationId" : "45",
+            "id" : "84",
+            "sourceId" : "37",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Publica evento CoordenadaPendienteValidacion",
+            "destinationId" : "41",
+            "id" : "85",
+            "sourceId" : "37",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        }, {
+          "description" : "Valida el acceso del chofer consultando servicion SICCOS mediante nómina y RFC, y relaciona el usuario con su transporte activo.",
+          "documentation" : { },
+          "id" : "38",
+          "name" : "Módulo de Autenticación de Chofer",
+          "properties" : {
+            "structurizr.dsl.identifier" : "autenticacionChofer"
+          },
+          "relationships" : [ {
+            "description" : "Consulta y replica datos de chofer para persistencia local",
+            "destinationId" : "22",
+            "id" : "76",
+            "sourceId" : "38",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Registra sesión, datos básicos del chofer y trazabilidad de acceso",
+            "destinationId" : "45",
+            "id" : "79",
+            "sourceId" : "38",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Genera evento de sincronización de datos del chofer si requiere actualización local",
+            "destinationId" : "41",
+            "id" : "81",
+            "sourceId" : "38",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Solicita transporte activo del chofer autenticado",
+            "destinationId" : "39",
+            "id" : "82",
+            "sourceId" : "38",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        }, {
+          "description" : "Consulta desde la base operativa los transportes activos, ruta asignada, clientes e interlocutores previamente sincronizados desde SAP",
+          "documentation" : { },
+          "id" : "39",
+          "name" : "Módulo de Rutas y Transportes del Chofer",
+          "properties" : {
+            "structurizr.dsl.identifier" : "rutasChofer"
+          },
+          "relationships" : [ {
+            "description" : "Consulta ruta, transporte, clientes e interlocutores sincronizados desde SAP",
+            "destinationId" : "45",
+            "id" : "103",
+            "sourceId" : "39",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Guarda/cachea transporte, ruta y trazabilidad de consulta",
+            "destinationId" : "45",
+            "id" : "107",
+            "sourceId" : "39",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Devuelve ruta asignada y puntos de entrega",
+            "destinationId" : "27",
+            "id" : "108",
+            "sourceId" : "39",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component"
+        }, {
+          "description" : "Administra datos locales/cacheados de rutas, transportes, clientes, interlocutores y coordenadas actuales para consulta de la app aun cuando SAP no esté disponible.",
+          "documentation" : { },
+          "id" : "40",
+          "name" : "Módulo de Sincronización Local",
+          "properties" : {
+            "structurizr.dsl.identifier" : "sincronizacionLocal"
+          },
+          "relationships" : [ {
+            "description" : "Actualiza copia local sincronizada",
+            "destinationId" : "45",
+            "id" : "166",
+            "sourceId" : "40",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Lee eventos pendientes para reprocesamiento",
+            "destinationId" : "41",
+            "id" : "167",
+            "sourceId" : "40",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        }, {
+          "description" : "Registra eventos pendientes de enviar a sistemas externos, controla estatus, reintentos, errores e idempotencia.",
+          "documentation" : { },
+          "id" : "41",
+          "name" : "Módulo de Cola Local / Outbox",
+          "properties" : {
+            "structurizr.dsl.identifier" : "outbox"
+          },
+          "relationships" : [ {
+            "description" : "Persiste eventos pendientes, estatus, número de intentos y errores",
+            "destinationId" : "45",
+            "id" : "156",
+            "sourceId" : "41",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        }, {
+          "description" : "Procesa eventos pendientes desde la cola local y ejecuta integraciones con SAP y Manager de Crédito y Cobranza sin depender de peticiones en tiempo real.",
+          "documentation" : { },
+          "id" : "42",
+          "name" : "Módulo de Integración Asíncrona",
+          "properties" : {
+            "structurizr.dsl.identifier" : "integracionAsincrona"
+          },
+          "relationships" : [ {
+            "description" : "Lee eventos pendientes",
+            "destinationId" : "41",
+            "id" : "157",
+            "sourceId" : "42",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Envía solicitud de coordenadas al Manager de Crédito y Cobranza",
+            "destinationId" : "15",
+            "id" : "158",
+            "sourceId" : "42",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Envía solicitud de coordenadas al Manager de Crédito y Cobranza",
+            "destinationId" : "13",
+            "id" : "159",
+            "linkedRelationshipId" : "158",
+            "sourceId" : "42"
+          }, {
+            "description" : "Actualiza estatus local según resultado de integración",
+            "destinationId" : "45",
+            "id" : "164",
+            "sourceId" : "42",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Registra envío, error o reintento",
+            "destinationId" : "35",
+            "id" : "165",
+            "sourceId" : "42",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Worker Module"
+        }, {
+          "description" : "Recibe desde SAP la asignación del chofer al transporte, incluyendo número de transporte, ruta, clientes, interlocutores y coordenadas actuales; valida estructura y actualiza la base operativa local.",
+          "documentation" : { },
+          "id" : "43",
+          "name" : "Módulo de Recepción de Asignación SAP",
+          "properties" : {
+            "structurizr.dsl.identifier" : "recepcionAsignacionSap"
+          },
+          "relationships" : [ {
+            "description" : "Guarda transporte asignado, ruta, clientes, interlocutores y coordenadas actuales",
+            "destinationId" : "45",
+            "id" : "176",
+            "sourceId" : "43",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Registra evento de asignación recibida desde SAP",
+            "destinationId" : "35",
+            "id" : "177",
+            "sourceId" : "43",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Entrega datos recibidos para normalización y actualización local",
+            "destinationId" : "40",
+            "id" : "178",
+            "sourceId" : "43",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        } ],
+        "description" : "Expone servicios de negocio, seguridad, reglas y trazabilidad.",
+        "documentation" : { },
+        "id" : "28",
+        "name" : "API / Backend de Transporte",
+        "properties" : {
+          "structurizr.dsl.identifier" : "api"
+        },
+        "relationships" : [ {
+          "description" : "Consulta y replica datos de chofer para persistencia local",
+          "destinationId" : "22",
+          "id" : "77",
+          "linkedRelationshipId" : "76",
+          "sourceId" : "28"
+        }, {
+          "description" : "Registra sesión, datos básicos del chofer y trazabilidad de acceso",
+          "destinationId" : "45",
+          "id" : "80",
+          "linkedRelationshipId" : "79",
+          "sourceId" : "28"
+        }, {
+          "description" : "Devuelve ruta asignada y puntos de entrega",
+          "destinationId" : "27",
+          "id" : "109",
+          "linkedRelationshipId" : "108",
+          "sourceId" : "28"
+        }, {
+          "description" : "Devuelve sesión válida, transporte activo, ruta, clientes e interlocutores",
+          "destinationId" : "27",
+          "id" : "118",
+          "sourceId" : "28",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Lee y escribe",
+          "destinationId" : "45",
+          "id" : "119",
+          "sourceId" : "28",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Guarda y consulta documentos",
+          "destinationId" : "47",
+          "id" : "120",
+          "sourceId" : "28",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Solicita integraciones y notificaciones",
+          "destinationId" : "44",
+          "id" : "121",
+          "sourceId" : "28",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Notifica salida/ruta",
+          "destinationId" : "23",
+          "id" : "132",
+          "linkedRelationshipId" : "131",
+          "sourceId" : "28"
+        }, {
+          "description" : "Consulta ubicación en tiempo real",
+          "destinationId" : "24",
+          "id" : "139",
+          "linkedRelationshipId" : "138",
+          "sourceId" : "28"
+        }, {
+          "description" : "Envía solicitud de coordenadas al Manager de Crédito y Cobranza",
+          "destinationId" : "15",
+          "id" : "160",
+          "linkedRelationshipId" : "158",
+          "sourceId" : "28"
+        }, {
+          "description" : "Envía solicitud de coordenadas al Manager de Crédito y Cobranza",
+          "destinationId" : "13",
+          "id" : "161",
+          "linkedRelationshipId" : "158",
+          "sourceId" : "28"
+        }, {
+          "description" : "Envía solicitud de actualización de coordenadas para validación",
+          "destinationId" : "16",
+          "id" : "179",
+          "sourceId" : "28",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,API",
+        "technology" : "Backend/API"
+      }, {
+        "description" : "Sincroniza datos con SAP, envía WhatsApp y procesa eventos asíncronos.",
+        "documentation" : { },
+        "id" : "44",
+        "name" : "Motor de Integraciones y Notificaciones",
+        "properties" : {
+          "structurizr.dsl.identifier" : "jobs"
+        },
+        "relationships" : [ {
+          "description" : "Envía notificaciones",
+          "destinationId" : "23",
+          "id" : "122",
+          "sourceId" : "44",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Recibe ubicación / consulta coordenadas",
+          "destinationId" : "24",
+          "id" : "124",
+          "sourceId" : "44",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Actualiza eventos y estados",
+          "destinationId" : "45",
+          "id" : "126",
+          "sourceId" : "44",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Recupera documentos para distribución",
+          "destinationId" : "47",
+          "id" : "127",
+          "sourceId" : "44",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Worker/Jobs"
+      }, {
+        "components" : [ {
+          "description" : "nombre de la persona",
+          "documentation" : { },
+          "id" : "46",
+          "name" : "nombre",
+          "properties" : {
+            "structurizr.dsl.identifier" : "nombre"
+          },
+          "tags" : "Element,Component",
+          "technology" : "Business Module"
+        } ],
+        "description" : "Persistencia de pedidos, asignaciones, incidencias, documentos, mensajes, coordenadas y trazabilidad.",
+        "documentation" : { },
+        "id" : "45",
+        "name" : "Base de Datos Operativa",
+        "properties" : {
+          "structurizr.dsl.identifier" : "db"
+        },
+        "tags" : "Element,Container,Database",
+        "technology" : "Database"
+      }, {
+        "description" : "Almacena archivos cargados y documentos validados del transporte.",
+        "documentation" : { },
+        "id" : "47",
+        "name" : "Repositorio de Documentos",
+        "properties" : {
+          "structurizr.dsl.identifier" : "docs"
+        },
+        "tags" : "Element,Container",
+        "technology" : "File Storage"
+      }, {
+        "description" : "Vista consolidada de solo consulta para operación en tiempo real.",
+        "documentation" : { },
+        "id" : "48",
+        "name" : "Dashboard de Monitoreo",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dashboard"
+        },
+        "relationships" : [ {
+          "description" : "Consulta",
+          "destinationId" : "28",
+          "id" : "117",
+          "sourceId" : "48",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Presenta",
+          "destinationId" : "36",
+          "id" : "128",
+          "sourceId" : "48",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Web Module"
+      } ],
+      "description" : "Sistema central para asignación, ejecución y monitoreo operativo del transporte.",
+      "documentation" : { },
+      "id" : "25",
+      "name" : "Plataforma de Transporte",
+      "properties" : {
+        "structurizr.dsl.identifier" : "transporte"
+      },
+      "relationships" : [ {
+        "description" : "Consulta y replica datos de chofer para persistencia local",
+        "destinationId" : "22",
+        "id" : "78",
+        "linkedRelationshipId" : "76",
+        "sourceId" : "25"
+      }, {
+        "description" : "Envía notificaciones",
+        "destinationId" : "23",
+        "id" : "123",
+        "linkedRelationshipId" : "122",
+        "sourceId" : "25"
+      }, {
+        "description" : "Recibe ubicación / consulta coordenadas",
+        "destinationId" : "24",
+        "id" : "125",
+        "linkedRelationshipId" : "124",
+        "sourceId" : "25"
+      }, {
+        "description" : "Envía solicitud de coordenadas al Manager de Crédito y Cobranza",
+        "destinationId" : "15",
+        "id" : "162",
+        "linkedRelationshipId" : "158",
+        "sourceId" : "25"
+      }, {
+        "description" : "Envía solicitud de coordenadas al Manager de Crédito y Cobranza",
+        "destinationId" : "13",
+        "id" : "163",
+        "linkedRelationshipId" : "158",
+        "sourceId" : "25"
+      }, {
+        "description" : "Envía solicitud de actualización de coordenadas para validación",
+        "destinationId" : "16",
+        "id" : "180",
+        "linkedRelationshipId" : "179",
+        "sourceId" : "25"
+      } ],
+      "tags" : "Element,Software System"
+    } ]
+  },
+  "name" : "App de Transporte - C4",
+  "properties" : {
+    "structurizr.inspection.error" : "165",
+    "structurizr.dsl" : "d29ya3NwYWNlICJBcHAgZGUgVHJhbnNwb3J0ZSAtIEM0IiAiTW9kZWxvIEM0IGJhc2FkbyBlbiBlbCBkb2N1bWVudG8gQXBwIGRlIFRyYW5zcG9ydGUiIHsKCQoJbW9kZWwgewoJCWxpZGVyID0gcGVyc29uICJMw61kZXIgZGUgVHJhbnNwb3J0ZSIgIkNvbnN1bHRhIHkgbW9uaXRvcmVhIGxhIG9wZXJhY2nDs24gZW4gdGllbXBvIHJlYWwuIgoJCWNvb3JkaW5hZG9yID0gcGVyc29uICJDb29yZGluYWRvciBkZSBUcmFuc3BvcnRlIiAiTW9uaXRvcmVhIGxhIG9wZXJhY2nDs24geSBnZXN0aW9uYSBkaXNwb25pYmlsaWRhZCBkZSByZWN1cnNvcy4iCgkJc3VwZXJ2aXNvciA9IHBlcnNvbiAiU3VwZXJ2aXNvciBkZSBUcmFuc3BvcnRlIiAiVmFsaWRhIGRvY3VtZW50YWNpw7NuIHkgbW9uaXRvcmVhIGxhIGVqZWN1Y2nDs24uIgoJCWFuYWxpc3RhID0gcGVyc29uICJBbmFsaXN0YSBkZSBUcmFuc3BvcnRlIiAiT3BlcmEgZWwgbWFuYWdlcjogYXNpZ25hIHVuaWRhZGVzLCB0cmlwdWxhY2nDs24sIGRvY3VtZW50b3MgZSBpbmNpZGVuY2lhcy4iCgkJcGxhbmVhZG9yID0gcGVyc29uICJQbGFuZWFkb3IgTG9nw61zdGljbyIgIkNvbmZpZ3VyYSBwZWRpZG9zIGVuIFNBUCwgYXNpZ25hIGNvcnRpbmEgeSB2YWxpZGEgY29vcmRlbmFkYXMsIHB1ZWRlIGFjdHVhbGl6YXIgY29vcmRlbmFkYXMgIGRlIHBkdiBkZXNkZSBsYSBwbGF0YWZvcm1hLiIKCQlhdXhpbGlhciA9IHBlcnNvbiAiQXV4aWxpYXIgZGUgUGF0aW8iICJFamVjdXRhIG1vdmltaWVudG8gYSBjb3J0aW5hIHkgZW52w61vIGEgcmVzZ3VhcmRvLiIKCQkvLyBjaG9mZXIgPSBwZXJzb24gIkNob2ZlciIgIkNvbnN1bHRhIHJ1dGEvZG9jdW1lbnRvcyB5IHJlcG9ydGEgaW5jaWRlbmNpYXMgZGVzZGUgbGEgYXBwIG3Ds3ZpbC9hY3R1YWxpemEgY29vcmRlbmFkYXMuIgoJCWNob2ZlciA9IHBlcnNvbiAiQ2hvZmVyIiAiQ29uc3VsdGEgcnV0YS9hY3R1YWxpemEgY29vcmRlbmFkYXMuIgoJCQoJCWdlcmVudGUgPSBwZXJzb24gIkdlcmVudGUgZGUgTG9nw61zdGljYSIgIkNvbnN1bHRhIGVsIGRhc2hib2FyZCB5IHNlZ3VpbWllbnRvIG9wZXJhdGl2by4iLCJhY3R1YWxpemEiCgkJdHJhZmljbyA9IHBlcnNvbiAiw4FyZWEgZGUgVHLDoWZpY28iICJSZWNpYmUgbm90aWZpY2FjaW9uZXMgaW50ZXJuYXMgeSBkYSBzZWd1aW1pZW50byBhIHNhbGlkYXMvaW5jaWRlbmNpYXMuIgoJCXRhbGxlciA9IHBlcnNvbiAiw4FyZWEgZGUgVGFsbGVyIiAiVmFsaWRhIGNvbmRpY2nDs24gb3BlcmF0aXZhIGRlIHVuaWRhZGVzIGNvbiBmYWxsYS4iCgkJLy9jYXZpID0gcGVyc29uICIvL2NhdmkiICJSZWNpYmUgYWxlcnRhcyBkZSBpbmNpZGVuY2lhcyBlbiBydXRhLiIKCQlmbGV0ZXJhID0gcGVyc29uICJQcm92ZWVkb3IgRmxldGVybyIgIlJlY2liZSBub3RpZmljYWNpb25lcyBkZSBzYWxpZGEgeSBhc2lnbmEgY2hvZmVyIHBhcmEgdW5pZGFkZXMgZmxldGVyYXMuIgoJCQoJCS8vU3lzdGVtYXMgcmVsYWNpb25hZG9zCgkJc2FwID0gc29mdHdhcmVTeXN0ZW0gIlNBUCIgIlNpc3RlbWEgbWFlc3RybyBwYXJhIHBlZGlkb3MsIGNhdMOhbG9nb3MsIGVzdGF0dXMgb3BlcmF0aXZvcywgZG9jdW1lbnRvcyB5IGV2ZW50b3MgZGUgc2FsaWRhL2NhcmdhLiIKCQltYW5hZ2VyQ3JlZGl0b19jb2JyYW56YSA9IHNvZnR3YXJlU3lzdGVtICJNYW5hZ2VyIGRlIENyw6lkaXRvIHkgQ29icmFuemEiICJQbGF0YWZvcm1hIGRlbCDDoXJlYSBkZSBDcsOpZGl0byB5IENvYnJhbnphIHBhcmEgcmV2aXNhciwgYXV0b3JpemFyIG8gcmVjaGF6YXIgc29saWNpdHVkZXMgeSBhY3R1YWxpemFyIGNvb3JkZW5hZGFzIGFwcm9iYWRhcyBlbiBTQVAuIiB7CgkJCWNjd2ViID0gY29udGFpbmVyICJQb3J0YWwgV2ViIENyw6lkaXRvIHkgQ29icmFuemEiICJJbnRlcmZheiBwYXJhIHJldmlzYXIgc29saWNpdHVkZXMgeSBhcHJvYmFyIG8gcmVjaGF6YXIgY2FtYmlvcy4iICJXZWIgQXBwIgoJCQljY2FwaSA9IGNvbnRhaW5lciAiQVBJIE1hbmFnZXIgQ3LDqWRpdG8geSBDb2JyYW56YSIgIlJlY2liZSBzb2xpY2l0dWRlcyBkZSBjb29yZGVuYWRhcywgZ2VzdGlvbmEgdmFsaWRhY2nDs24geSBlbnbDrWEgYWN0dWFsaXphY2lvbmVzIGFwcm9iYWRhcyBhIFNBUC4iICJBUEkiIHsKCQkJCXJlY2VwY2lvbiA9IGNvbXBvbmVudCAiTcOzZHVsbyBkZSBSZWNlcGNpw7NuIGRlIFNvbGljaXR1ZGVzIiAiUmVjaWJlIGxhIHNvbGljaXR1ZCBlbnZpYWRhIGRlc2RlIFRyYW5zcG9ydGUgeSB2YWxpZGEgZXN0cnVjdHVyYSwgY2FtcG9zIG9ibGlnYXRvcmlvcyB5IGNvbnRleHRvIG3DrW5pbW8uIiAiQnVzaW5lc3MgTW9kdWxlIgoJCQkJdmFsaWRhY2lvbiA9IGNvbXBvbmVudCAiTcOzZHVsbyBkZSBHZXN0acOzbiBkZSBTb2xpY2l0dWRlcyBkZSBDb29yZGVuYWRhcyIgIkdlc3Rpb25hIGxhIGFwcm9iYWNpw7NuIG8gcmVjaGF6byBkZSBhY3R1YWxpemFjaW9uZXMgZGUgY29vcmRlbmFkYXMgcXVlIHJlcXVpZXJlbiB2YWxpZGFjacOzbi4iICJCdXNpbmVzcyBNb2R1bGUiCgkJCQlwZW5kaWVudGVzU2FwID0gY29tcG9uZW50ICJNw7NkdWxvIGRlIFBlbmRpZW50ZXMgZGUgRW52w61vIGEgU0FQIC8gT3V0Ym94IiAiR3VhcmRhIGNvb3JkZW5hZGFzIGFwcm9iYWRhcyBwZW5kaWVudGVzIGRlIGVudmlhciBhIFNBUCwgY29udHJvbGEgcmVpbnRlbnRvcywgZXJyb3JlcyBlIGlkZW1wb3RlbmNpYSBwYXJhIGV2aXRhciBww6lyZGlkYSBvIGR1cGxpY2lkYWQgZGUgYWN0dWFsaXphY2lvbmVzLiIgIldvcmtlciBNb2R1bGUiCgkJCQlpbnRlZ3JhY2lvblNhcCA9IGNvbXBvbmVudCAiTcOzZHVsbyBkZSBJbnRlZ3JhY2nDs24gU0FQIiAiRW52w61hIGEgU0FQIGxhcyBjb29yZGVuYWRhcyBhcHJvYmFkYXMgeSBwcm9jZXNhIGxhIHJlc3B1ZXN0YSBkZSBjb25maXJtYWNpw7NuLiIgIldvcmtlciBNb2R1bGUiCgkJCQl0cmF6YWJpbGlkYWQgPSBjb21wb25lbnQgIk3Ds2R1bG8gZGUgVHJhemFiaWxpZGFkIiAiUmVnaXN0cmEgZXN0YXR1cywgY29tZW50YXJpb3MsIHVzdWFyaW8sIGZlY2hhLCBjb29yZGVuYWRhcyBhY3R1YWxlcywgY29vcmRlbmFkYXMgbnVldmFzIHkgcmVzdWx0YWRvIGRlIGludGVncmFjacOzbi4iICJCdXNpbmVzcyBNb2R1bGUiCgkJCX0KCQkJCgkJCWNjZGIgPSBjb250YWluZXIgIkJhc2UgZGUgRGF0b3MgTWFuYWdlciBDcsOpZGl0byB5IENvYnJhbnphIiAiQWxtYWNlbmEgc29saWNpdHVkZXMsIGNvb3JkZW5hZGFzIGFjdHVhbGVzLCBjb29yZGVuYWRhcyBwcm9wdWVzdGFzLCBlc3RhdHVzLCBjb21lbnRhcmlvcyB5IHRyYXphYmlsaWRhZC4iICJEYXRhYmFzZSIgIkRhdGFiYXNlIgoJCX0KCQkKCQlzaWNjb3MgPSBzb2Z0d2FyZVN5c3RlbSAiU0lDQ09TIiAiU2lzdGVtYSBmdWVudGUgcGFyYSBjb25zdWx0YXIgZGF0b3MgZGVsIGNob2ZlciwgY29tbyBub21icmUsIG7Dum1lcm8gZGUgbsOzbWluYSB5IFJGQy4iCgkJLy8gc2FzaXAgPSBzb2Z0d2FyZVN5c3RlbSAiU0FTSVAiICJTaXN0ZW1hIGRlIGFzaXN0ZW5jaWEgcGFyYSBwcmVjYXJnYSBkZSBjaG9mZXJlcyB5IGF5dWRhbnRlcy4iCgkJd2hhdHNhcHAgPSBzb2Z0d2FyZVN5c3RlbSAiV2hhdHNBcHAgLyBQcm92ZWVkb3IgZGUgbWVuc2FqZXLDrWEiICJDYW5hbCBkZSBub3RpZmljYWNpw7NuIGRlIHJ1dGFzIHkgc2FsaWRhcy4iCgkJZ3BzID0gc29mdHdhcmVTeXN0ZW0gIlNlcnZpY2lvIEdQUyAvIEdlb2xvY2FsaXphY2nDs24iICJGdWVudGUgZGUgdWJpY2FjacOzbiBkZSB1bmlkYWRlcyB5IGNvb3JkZW5hZGFzIG3Ds3ZpbGVzLiIKCQl0cmFuc3BvcnRlID0gc29mdHdhcmVTeXN0ZW0gIlBsYXRhZm9ybWEgZGUgVHJhbnNwb3J0ZSIgIlNpc3RlbWEgY2VudHJhbCBwYXJhIGFzaWduYWNpw7NuLCBlamVjdWNpw7NuIHkgbW9uaXRvcmVvIG9wZXJhdGl2byBkZWwgdHJhbnNwb3J0ZS4iIHsKCQkJd2ViYXBwID0gY29udGFpbmVyICJBcGxpY2FjacOzbiBXZWIgLyBNYW5hZ2VyIiAiSW50ZXJmYXogd2ViIHBhcmEgb3BlcmFjacOzbiBkZSB0cmFuc3BvcnRlIHkgYWRtaW5pc3RyYWNpw7NuLCBhY3R1YWxpemFjacOzbiBkZSBjb29yZGVuYWRvcyBQRFYuIiAiV2ViIEFwcCIKCQkJbW9iaWxlID0gY29udGFpbmVyICJBcGxpY2FjacOzbiBNw7N2aWwgZGUgQ2hvZmVyIiAiQ29uc3VsdGEgZGUgcnV0YSwgZG9jdW1lbnRvcywgbWVuc2FqZXMgZSBpbmNpZGVuY2lhcy4iICJNb2JpbGUgQXBwIgoJCQlhcGkgPSBjb250YWluZXIgIkFQSSAvIEJhY2tlbmQgZGUgVHJhbnNwb3J0ZSIgIkV4cG9uZSBzZXJ2aWNpb3MgZGUgbmVnb2Npbywgc2VndXJpZGFkLCByZWdsYXMgeSB0cmF6YWJpbGlkYWQuIiAiQmFja2VuZC9BUEkiICJBUEkiIHsKCQkJCS8vcnV0YXMgPSBjb21wb25lbnQgIk3Ds2R1bG8gZGUgUnV0YXMiICJDb25zdWx0YSBkZXNkZSBTQVAgbG9zIHRyYW5zcG9ydGVzIGFjdGl2b3MsIHJ1dGEgYXNpZ25hZGEsIGNsaWVudGVzIGUgaW50ZXJsb2N1dG9yZXMgYXNvY2lhZG9zIGFsIGNob2Zlci4iICJCdXNpbmVzcyBNb2R1bGUiCgkJCQlhc2lnbmFjaW9uZXMgPSBjb21wb25lbnQgIk3Ds2R1bG8gZGUgQXNpZ25hY2lvbmVzIiAiR2VzdGlvbmEgcGVkaWRvcywgYXNpZ25hY2nDs24gZGUgdW5pZGFkIHkgdHJpcHVsYWNpw7NuLCB5IHJlZ2lzdHJvIGRlIGNob2ZlciBmbGV0ZXJvLiIgIkJ1c2luZXNzIE1vZHVsZSIKCQkJCXBhdGlvID0gY29tcG9uZW50ICJNw7NkdWxvIGRlIE9wZXJhY2nDs24gZW4gUGF0aW8iICJDb250cm9sYSBub3RpZmljYWNpw7NuIGEgcGF0aW8sIG1vdmltaWVudG8gYSBjb3J0aW5hIHkgZW52w61vIGEgcmVzZ3VhcmRvLiIgIkJ1c2luZXNzIE1vZHVsZSIKCQkJCWRvY3VtZW50YWwgPSBjb21wb25lbnQgIk3Ds2R1bG8gZGUgRG9jdW1lbnRhY2nDs24iICJDYXJnYSwgdmFsaWRhY2nDs24geSBjb25zdWx0YSBkZSBkb2N1bWVudG9zIGRlIHRyYW5zcG9ydGUuIiAiQnVzaW5lc3MgTW9kdWxlIgoJCQkJbWVuc2FqZXJpYSA9IGNvbXBvbmVudCAiTcOzZHVsbyBkZSBNZW5zYWplcsOtYSB5IE5vdGlmaWNhY2lvbmVzIiAiRW52w61hIG1lbnNhamVzIG9wZXJhdGl2b3MgeSBub3RpZmljYWNpb25lcyBkZSBzYWxpZGEuIiAiQnVzaW5lc3MgTW9kdWxlIgoJCQkJaW5jaWRlbmNpYXMgPSBjb21wb25lbnQgIk3Ds2R1bG8gZGUgSW5jaWRlbmNpYXMiICJSZWdpc3RyYSBmYWxsYXMsIGNsYXNpZmljYWNpw7NuIG9wZXJhdGl2YSB5IGNvbnRpbnVpZGFkL3RyYW5zYm9yZG8uIiAiQnVzaW5lc3MgTW9kdWxlIgoJCQkJY2F0YWxvZ29zID0gY29tcG9uZW50ICJNw7NkdWxvIGRlIENhdMOhbG9nb3MgeSBBY2Nlc29zIiAiR2VzdGlvbmEgY2hvZmVyZXMsIGF5dWRhbnRlcywgdmVow61jdWxvcywgYWNjZXNvcyBmbGV0ZXJvcyB5IGVzdGF0dXMuIiAiQnVzaW5lc3MgTW9kdWxlIgoJCQkJLy9jb29yZGVuYWRhcyA9IGNvbXBvbmVudCAiTcOzZHVsbyBkZSBDb29yZGVuYWRhcyIgIlJlY2liZSBwcm9wdWVzdGFzIGRlIGFjdHVhbGl6YWNpw7NuIEdQUyB5IGxhcyB2YWxpZGEvZW52w61hIGEgU0FQLiIgIkJ1c2luZXNzIE1vZHVsZSIKCQkJCWhpc3RvcmljbyA9IGNvbXBvbmVudCAiTcOzZHVsbyBkZSBIaXN0b3JpYWwgT3BlcmF0aXZvIiAiUmVnaXN0cmEgZXZlbnRvcywgbWVuc2FqZXMgeSB0cmF6YWJpbGlkYWQgZGVsIHBlZGlkby4iICJCdXNpbmVzcyBNb2R1bGUiCgkJCQltb25pdG9yZW8gPSBjb21wb25lbnQgIk3Ds2R1bG8gZGUgRGFzaGJvYXJkIC8gTW9uaXRvcmVvIiAiQ29uc29saWRhIG9wZXJhY2nDs24sIG1hcGEsIGZpbHRyb3MsIGVzdGF0dXMgeSBhbGVydGFzLiIgIkJ1c2luZXNzIE1vZHVsZSIKCQkJCWNvb3JkZW5hZGFzID0gY29tcG9uZW50ICJNw7NkdWxvIGRlIENvb3JkZW5hZGFzIiAiR2VzdGlvbmEgYWN0dWFsaXphY2nDs24gZGUgY29vcmRlbmFkYXMuICBDYW5hbGl6YSBzb2xpY2l0dWRlcyBkZWwgY2hvZmVyIGhhY2lhIGxhIEFQSSBkZWwgTWFuYWdlci4iICJCdXNpbmVzcyBNb2R1bGUiCgkJCQlhdXRlbnRpY2FjaW9uQ2hvZmVyID0gY29tcG9uZW50ICJNw7NkdWxvIGRlIEF1dGVudGljYWNpw7NuIGRlIENob2ZlciIgIlZhbGlkYSBlbCBhY2Nlc28gZGVsIGNob2ZlciBjb25zdWx0YW5kbyBzZXJ2aWNpb24gU0lDQ09TIG1lZGlhbnRlIG7Ds21pbmEgeSBSRkMsIHkgcmVsYWNpb25hIGVsIHVzdWFyaW8gY29uIHN1IHRyYW5zcG9ydGUgYWN0aXZvLiIgIkJ1c2luZXNzIE1vZHVsZSIKCQkJCXJ1dGFzQ2hvZmVyID0gY29tcG9uZW50ICJNw7NkdWxvIGRlIFJ1dGFzIHkgVHJhbnNwb3J0ZXMgZGVsIENob2ZlciIgIkNvbnN1bHRhIGRlc2RlIGxhIGJhc2Ugb3BlcmF0aXZhIGxvcyB0cmFuc3BvcnRlcyBhY3Rpdm9zLCBydXRhIGFzaWduYWRhLCBjbGllbnRlcyBlIGludGVybG9jdXRvcmVzIHByZXZpYW1lbnRlIHNpbmNyb25pemFkb3MgZGVzZGUgU0FQIgoJCQkJc2luY3Jvbml6YWNpb25Mb2NhbCA9IGNvbXBvbmVudCAiTcOzZHVsbyBkZSBTaW5jcm9uaXphY2nDs24gTG9jYWwiICJBZG1pbmlzdHJhIGRhdG9zIGxvY2FsZXMvY2FjaGVhZG9zIGRlIHJ1dGFzLCB0cmFuc3BvcnRlcywgY2xpZW50ZXMsIGludGVybG9jdXRvcmVzIHkgY29vcmRlbmFkYXMgYWN0dWFsZXMgcGFyYSBjb25zdWx0YSBkZSBsYSBhcHAgYXVuIGN1YW5kbyBTQVAgbm8gZXN0w6kgZGlzcG9uaWJsZS4iICJCdXNpbmVzcyBNb2R1bGUiCgkJCQlvdXRib3ggPSBjb21wb25lbnQgIk3Ds2R1bG8gZGUgQ29sYSBMb2NhbCAvIE91dGJveCIgIlJlZ2lzdHJhIGV2ZW50b3MgcGVuZGllbnRlcyBkZSBlbnZpYXIgYSBzaXN0ZW1hcyBleHRlcm5vcywgY29udHJvbGEgZXN0YXR1cywgcmVpbnRlbnRvcywgZXJyb3JlcyBlIGlkZW1wb3RlbmNpYS4iICJCdXNpbmVzcyBNb2R1bGUiCgkJCQlpbnRlZ3JhY2lvbkFzaW5jcm9uYSA9IGNvbXBvbmVudCAiTcOzZHVsbyBkZSBJbnRlZ3JhY2nDs24gQXPDrW5jcm9uYSIgIlByb2Nlc2EgZXZlbnRvcyBwZW5kaWVudGVzIGRlc2RlIGxhIGNvbGEgbG9jYWwgeSBlamVjdXRhIGludGVncmFjaW9uZXMgY29uIFNBUCB5IE1hbmFnZXIgZGUgQ3LDqWRpdG8geSBDb2JyYW56YSBzaW4gZGVwZW5kZXIgZGUgcGV0aWNpb25lcyBlbiB0aWVtcG8gcmVhbC4iICJXb3JrZXIgTW9kdWxlIgoJCQkJcmVjZXBjaW9uQXNpZ25hY2lvblNhcCA9IGNvbXBvbmVudCAiTcOzZHVsbyBkZSBSZWNlcGNpw7NuIGRlIEFzaWduYWNpw7NuIFNBUCIgIlJlY2liZSBkZXNkZSBTQVAgbGEgYXNpZ25hY2nDs24gZGVsIGNob2ZlciBhbCB0cmFuc3BvcnRlLCBpbmNsdXllbmRvIG7Dum1lcm8gZGUgdHJhbnNwb3J0ZSwgcnV0YSwgY2xpZW50ZXMsIGludGVybG9jdXRvcmVzIHkgY29vcmRlbmFkYXMgYWN0dWFsZXM7IHZhbGlkYSBlc3RydWN0dXJhIHkgYWN0dWFsaXphIGxhIGJhc2Ugb3BlcmF0aXZhIGxvY2FsLiIgIkJ1c2luZXNzIE1vZHVsZSIKCQkJfQoJCQlqb2JzID0gY29udGFpbmVyICJNb3RvciBkZSBJbnRlZ3JhY2lvbmVzIHkgTm90aWZpY2FjaW9uZXMiICJTaW5jcm9uaXphIGRhdG9zIGNvbiBTQVAsIGVudsOtYSBXaGF0c0FwcCB5IHByb2Nlc2EgZXZlbnRvcyBhc8OtbmNyb25vcy4iICJXb3JrZXIvSm9icyIKCQkJZGIgPSBjb250YWluZXIgIkJhc2UgZGUgRGF0b3MgT3BlcmF0aXZhIiAiUGVyc2lzdGVuY2lhIGRlIHBlZGlkb3MsIGFzaWduYWNpb25lcywgaW5jaWRlbmNpYXMsIGRvY3VtZW50b3MsIG1lbnNhamVzLCBjb29yZGVuYWRhcyB5IHRyYXphYmlsaWRhZC4iICJEYXRhYmFzZSIgIkRhdGFiYXNlIiB7CgkJCQlub21icmUgPSBjb21wb25lbnQgIm5vbWJyZSIgIm5vbWJyZSBkZSBsYSBwZXJzb25hIiAiQnVzaW5lc3MgTW9kdWxlIgoJCQl9CgkJCWRvY3MgPSBjb250YWluZXIgIlJlcG9zaXRvcmlvIGRlIERvY3VtZW50b3MiICJBbG1hY2VuYSBhcmNoaXZvcyBjYXJnYWRvcyB5IGRvY3VtZW50b3MgdmFsaWRhZG9zIGRlbCB0cmFuc3BvcnRlLiIgIkZpbGUgU3RvcmFnZSIKCQkJZGFzaGJvYXJkID0gY29udGFpbmVyICJEYXNoYm9hcmQgZGUgTW9uaXRvcmVvIiAiVmlzdGEgY29uc29saWRhZGEgZGUgc29sbyBjb25zdWx0YSBwYXJhIG9wZXJhY2nDs24gZW4gdGllbXBvIHJlYWwuIiAiV2ViIE1vZHVsZSIKCQl9CgkJCgkJLy9jb25leGlvbmVzIG5pdmUgMQoJCS8vdHJhbnNwb3J0ZSAtPiBtYW5hZ2VyQ3JlZGl0b19jb2JyYW56YSAgIkVudsOtYSBzb2xpY2l0dWQgZGUgYWN0dWFsaXphY2nDs24gZGUgY29vcmRlbmFkYXMiCgkJCgkJLy9jb25leGlvbiBuaXZlbCAyCgkJbGlkZXIgLT4gZGFzaGJvYXJkICJDb25zdWx0YSBvcGVyYWNpw7NuIgoJCWNvb3JkaW5hZG9yIC0+IGRhc2hib2FyZCAiTW9uaXRvcmVhIG9wZXJhY2nDs24iCgkJY29vcmRpbmFkb3IgLT4gY2F0YWxvZ29zICJWYWxpZGEgZGlzcG9uaWJpbGlkYWQgZGUgcmVjdXJzb3MiCgkJZ2VyZW50ZSAtPiBkYXNoYm9hcmQgIkNvbnN1bHRhIGluZGljYWRvcmVzIHkgc2VndWltaWVudG8iCgkJCgkJc3VwZXJ2aXNvciAtPiB3ZWJhcHAgIlZhbGlkYSBkb2N1bWVudGFjacOzbiB5IG1vbml0b3JlYSIKCQlzdXBlcnZpc29yIC0+IGRvY3VtZW50YWwgIkFwcnVlYmEgbyByZWNoYXphIGRvY3VtZW50b3MiCgkJCgkJYW5hbGlzdGEgLT4gd2ViYXBwICJHZXN0aW9uYSBhc2lnbmFjaW9uZXMsIGRvY3VtZW50b3MgZSBpbmNpZGVuY2lhcyIKCQlhbmFsaXN0YSAtPiBhc2lnbmFjaW9uZXMgIkFzaWduYSB1bmlkYWQgeSB0cmlwdWxhY2nDs24iCgkJYW5hbGlzdGEgLT4gZG9jdW1lbnRhbCAiQ2FyZ2EgZG9jdW1lbnRhY2nDs24iCgkJYW5hbGlzdGEgLT4gbWVuc2FqZXJpYSAiRW52w61hIG1lbnNhamVzIGFsIGNob2ZlciIKCQlhbmFsaXN0YSAtPiBpbmNpZGVuY2lhcyAiR2VzdGlvbmEgZmFsbGFzIHkgdHJhbnNib3Jkb3MiCgkJCgkJcGxhbmVhZG9yIC0+IHdlYmFwcCAiQ29uc3VsdGEgcGVkaWRvcywgYXNpZ25hIGNvcnRpbmEgeSB2YWxpZGEvYWN0dWFsaXphIGNvb3JkZW5hZGFzIgoJCS8vcGxhbmVhZG9yIC0+IGNvb3JkZW5hZGFzICJBcHJ1ZWJhIG8gcmVjaGF6YSBjYW1iaW9zIEdQUyIKCQkKCQlhdXhpbGlhciAtPiB3ZWJhcHAgIkVqZWN1dGEgbW92aW1pZW50b3MgZGUgcGF0aW8iCgkJYXV4aWxpYXIgLT4gcGF0aW8gIk9wZXJhIG1vdmltaWVudG9zIGVuIHBhdGlvIgoJCQoJCS8vY2hvZmVyIC0+IG1vYmlsZSAiQ29uc3VsdGEgcnV0YSxyZXBvcnRhIGluY2lkZW5jaWFzIHkgYWN0dWFsaXphIGNvb3JkZW5hZGFzIgoJCWNob2ZlciAtPiBtb2JpbGUgIkluaWNpYSBzZXNpw7NuLCBjb25zdWx0YSBydXRhIHkgYWN0dWFsaXphIGNvb3JkZW5hZGFzIgoJCS8vY2hvZmVyIC0+IGRvY3VtZW50YWwgIkNvbnN1bHRhL2Rlc2NhcmdhIGRvY3VtZW50b3MiCgkJLy8gY2hvZmVyIC0+IG1lbnNhamVyaWEgIlJlY2liZSBtZW5zYWplcyIKCQkvL2Nob2ZlciAtPiBtb2JpbGUgIkFjdHVhbGl6YSBjb29yZGVuYWRhcyBkZWwgY2xpZW50ZSIKCQkvL21vYmlsZSAtPiBjY2FwaSAiRW52w61hIHNvbGljaXR1ZCBkZSBhY3R1YWxpemFjacOzbiBkZSBjb29yZGVuYWRhcyIKCQlhdXRlbnRpY2FjaW9uQ2hvZmVyIC0+IHNpY2NvcyAiQ29uc3VsdGEgeSByZXBsaWNhIGRhdG9zIGRlIGNob2ZlciBwYXJhIHBlcnNpc3RlbmNpYSBsb2NhbCIKCQlhdXRlbnRpY2FjaW9uQ2hvZmVyIC0+IGRiICJSZWdpc3RyYSBzZXNpw7NuLCBkYXRvcyBiw6FzaWNvcyBkZWwgY2hvZmVyIHkgdHJhemFiaWxpZGFkIGRlIGFjY2VzbyIKCQlhdXRlbnRpY2FjaW9uQ2hvZmVyIC0+IG91dGJveCAiR2VuZXJhIGV2ZW50byBkZSBzaW5jcm9uaXphY2nDs24gZGUgZGF0b3MgZGVsIGNob2ZlciBzaSByZXF1aWVyZSBhY3R1YWxpemFjacOzbiBsb2NhbCIKCQlhdXRlbnRpY2FjaW9uQ2hvZmVyIC0+IHJ1dGFzQ2hvZmVyICJTb2xpY2l0YSB0cmFuc3BvcnRlIGFjdGl2byBkZWwgY2hvZmVyIGF1dGVudGljYWRvIgoJCQoJCWNvb3JkZW5hZGFzIC0+IHJ1dGFzQ2hvZmVyICJWYWxpZGEgcXVlIGVsIGNsaWVudGUvaW50ZXJsb2N1dG9yIHBlcnRlbmV6Y2EgYSBsYSBydXRhIGFjdGl2YSIKCQljb29yZGVuYWRhcyAtPiBkYiAiR3VhcmRhIHNvbGljaXR1ZCBjb24gZXN0YXR1cyBQZW5kaWVudGUgZGUgdmFsaWRhY2nDs24iCgkJY29vcmRlbmFkYXMgLT4gb3V0Ym94ICJQdWJsaWNhIGV2ZW50byBDb29yZGVuYWRhUGVuZGllbnRlVmFsaWRhY2lvbiIKCQkKCQl0cmFmaWNvIC0+IGRhc2hib2FyZCAiRGEgc2VndWltaWVudG8gb3BlcmF0aXZvIgoJCQoJCQoJCQoJCWZsZXRlcmEgLT4gd2hhdHNhcHAgIlJlY2liZSBhdmlzbyBkZSBydXRhL3NhbGlkYSIKCQkvL2NhdmkgLT4gZGFzaGJvYXJkICJDb25zdWx0YSBhbGVydGFzIGRlIGluY2lkZW5jaWFzIgoJCXRhbGxlciAtPiB3ZWJhcHAgIlZhbGlkYSBjb25kaWNpw7NuIGRlIHVuaWRhZCIKCQkKCQl3ZWJhcHAgLT4gYXBpICJVc2Evc29saWNpdGEgYWN0dWFsaXphY2nDs24gZGUgY29vcmRlbmFkYXMgZGUgUERWIgoJCXdlYmFwcCAtPiBhc2lnbmFjaW9uZXMgIkNvbnRpZW5lIC8gdXNhIgoJCXdlYmFwcCAtPiBwYXRpbyAiQ29udGllbmUgLyB1c2EiCgkJd2ViYXBwIC0+IGRvY3VtZW50YWwgIkNvbnRpZW5lIC8gdXNhIgoJCXdlYmFwcCAtPiBtZW5zYWplcmlhICJDb250aWVuZSAvIHVzYSIKCQl3ZWJhcHAgLT4gaW5jaWRlbmNpYXMgIkNvbnRpZW5lIC8gdXNhIgoJCXdlYmFwcCAtPiBjYXRhbG9nb3MgIkNvbnRpZW5lIC8gdXNhIgoJCS8vd2ViYXBwIC0+IGNjYXBpICJDb250aWVuZSAvIHVzYSIKCQl3ZWJhcHAgLT4gaGlzdG9yaWNvICJDb25zdWx0YSIKCQkKCQkvL21vYmlsZSAtPiBhcGkgIlVzYSwgQWN0dWFsaXphIGNvb3JkZW5hZGFzIGRlbCBjbGllbnRlIgoJCW1vYmlsZSAtPiBhcGkgIkVudsOtYSBjcmVkZW5jaWFsZXMsIGNvbnN1bHRhIHJ1dGEgeSByZWdpc3RyYSBjb29yZGVuYWRhcyBHUFMiCgkJCgkJbW9iaWxlIC0+IGF1dGVudGljYWNpb25DaG9mZXIgIkVudsOtYSBuw7NtaW5hIHkgUkZDIHBhcmEgaW5pY2lhciBzZXNpw7NuIgoJCS8vcnV0YXNDaG9mZXIgLT4gbW9iaWxlICJTaW5jcm9uaXphIGluZm9ybWFjacOzbiBkZSBydXRhcywgY2xpZW50ZXMgeSBkb2N1bWVudG9zIG9wZXJhdGl2b3MiCgkJLy8gbW9iaWxlIC0+IHJ1dGFzQ2hvZmVyICJDb25zdWx0YSB0cmFuc3BvcnRlIGFjdGl2bywgcnV0YSwgY2xpZW50ZXMgZSBpbnRlcmxvY3V0b3JlcyIKCQltb2JpbGUgLT4gY29vcmRlbmFkYXMgIkVudsOtYSBjb29yZGVuYWRhcyBHUFMgcHJvcHVlc3RhcyIKCQltb2JpbGUgLT4gcnV0YXNDaG9mZXIgIkNvbnN1bHRhIHRyYW5zcG9ydGUgYWN0aXZvLCBydXRhLCBjbGllbnRlcyBlIGludGVybG9jdXRvcmVzIgoJCS8vIHJ1dGFzQ2hvZmVyIC0+IHNhcCAiQ29uc3VsdGEgdHJhbnNwb3J0ZSwgcnV0YSwgY2xpZW50ZXMsIGludGVybG9jdXRvcmVzIHkgY29vcmRlbmFkYXMgYWN0dWFsZXMiCgkJLy8gcnV0YXNDaG9mZXIgLT4gZGIgIlJlZ2lzdHJhIGNvbnN1bHRhIGRlIHJ1dGEgeSB0cmF6YWJpbGlkYWQiCgkJLy8gcnV0YXNDaG9mZXIgLT4gY29vcmRlbmFkYXMgIlByb3BvcmNpb25hIGNvbnRleHRvIGRlIGNsaWVudGUvaW50ZXJsb2N1dG9yIHBhcmEgYWN0dWFsaXphY2nDs24gZGUgY29vcmRlbmFkYXMiCgkJcnV0YXNDaG9mZXIgLT4gZGIgIkNvbnN1bHRhIHJ1dGEsIHRyYW5zcG9ydGUsIGNsaWVudGVzIGUgaW50ZXJsb2N1dG9yZXMgc2luY3Jvbml6YWRvcyBkZXNkZSBTQVAiCgkJc2FwIC0+IGludGVncmFjaW9uQXNpbmNyb25hICAiU2luY3Jvbml6YSBpbmZvcm1hY2nDs24gZGUgcnV0YXMsIGNsaWVudGVzIgoJCS8vcnV0YXNDaG9mZXIgLT4gc2FwICJDb25zdWx0YSB0cmFuc3BvcnRlIGFjdGl2bywgcnV0YSwgY2xpZW50ZXMsIGludGVybG9jdXRvcmVzIHkgY29vcmRlbmFkYXMgYWN0dWFsZXMiCgkJcnV0YXNDaG9mZXIgLT4gZGIgIkd1YXJkYS9jYWNoZWEgdHJhbnNwb3J0ZSwgcnV0YSB5IHRyYXphYmlsaWRhZCBkZSBjb25zdWx0YSIKCQkvL3J1dGFzQ2hvZmVyIC0+IGRiICJDb25zdWx0YSB0cmFuc3BvcnRlLCBydXRhLCBjbGllbnRlcyBlIGludGVybG9jdXRvcmVzIHJlY2liaWRvcyBkZXNkZSBTQVAiCgkJcnV0YXNDaG9mZXIgLT4gbW9iaWxlICJEZXZ1ZWx2ZSBydXRhIGFzaWduYWRhIHkgcHVudG9zIGRlIGVudHJlZ2EiCgkJLy9tb2JpbGUgLT4gYXBpICJFbnbDrWEgYWN0dWFsaXphY2nDs24gZGUgY29vcmRlbmFkYXMiCgkJCgkJY2N3ZWIgLT4gY2NhcGkgIkNvbnN1bHRhIHkgdmFsaWRhIHNvbGljaXR1ZGVzIgoJCWNjd2ViIC0+IGNjYXBpICJDYXB0dXJhIG1hbnVhbG1lbnRlIG8gdmFsaWRhIHNvbGljaXR1ZGVzIGRlIGFjdHVhbGl6YWNpw7NuIGRlIGNvb3JkZW5hZGFzIgoJCS8vY2N3ZWIgLT4gY2FwdHVyYU1hbnVhbCAiUmVnaXN0cmEgc29saWNpdHVkIG1hbnVhbCBkZSBhY3R1YWxpemFjacOzbiIKCQljY2FwaSAtPiBjY2RiICJHdWFyZGEgeSBjb25zdWx0YSBzb2xpY2l0dWRlcyIKCQljY2FwaSAtPiBzYXAgIkVudsOtYSBjb29yZGVuYWRhcyBhcHJvYmFkYXMiCgkJLy9jY2FwaSAtPiBzYXAgIkVudsOtYSBhY3R1YWxpemFjacOzbiBhcHJvYmFkYSAoWlNEX0NPT1JERU5BREFTKSIKCQkvLyBjY2FwaSAtPiBzYXAgIkVudsOtYSBhY3R1YWxpemFjacOzbiBhcHJvYmFkYSBtZWRpYW50ZSBaU0RfQ09PUkRFTkFEQVMiCgkJCgkJc2FwIC0+IGNjYXBpICJDb25maXJtYSBhY3R1YWxpemFjacOzbiIKCQkKCQlkYXNoYm9hcmQgLT4gYXBpICJDb25zdWx0YSIKCQkKCQkvL2FwaSAtPiBjY2FwaSAiRW52w61hIHNvbGljaXR1ZCBkZSBhY3R1YWxpemFjacOzbiBkZSBjb29yZGVuYWRhcyBwYXJhIHZhbGlkYWNpw7NuIgoJCS8vYXBpIC0+IHJlY2VwY2lvbiAiRW52w61hIHNvbGljaXR1ZCBkZSBhY3R1YWxpemFjacOzbiBkZSBjb29yZGVuYWRhcyBwYXJhIHZhbGlkYWNpw7NuIgoJCWFwaSAtPiBtb2JpbGUgIkRldnVlbHZlIHNlc2nDs24gdsOhbGlkYSwgdHJhbnNwb3J0ZSBhY3Rpdm8sIHJ1dGEsIGNsaWVudGVzIGUgaW50ZXJsb2N1dG9yZXMiCgkJYXBpIC0+IGRiICJMZWUgeSBlc2NyaWJlIgoJCWFwaSAtPiBkb2NzICJHdWFyZGEgeSBjb25zdWx0YSBkb2N1bWVudG9zIgoJCWFwaSAtPiBqb2JzICJTb2xpY2l0YSBpbnRlZ3JhY2lvbmVzIHkgbm90aWZpY2FjaW9uZXMiCgkJCgkJLy8gYXBpIC0+IHNhcCAiIGNvbnN1bHRhICBpbmZvcm1hY2lvbiBkZWwgdHJhbnNwb3J0ZSIKCQkvL2FwaSAtPiBzaWNjb3MgIkNvbnN1bHRhIGRhdG9zIGRlbCBjaG9mZXIgcGFyYSBhdXRlbnRpY2FjacOzbiIKCQkvL2pvYnMgLT4gc2FwICJDb25zdW1lIHkgZW52w61hIGluZm9ybWFjacOzbiIKCQkvL2pvYnMgLT4gc2FzaXAgIlNpbmNyb25pemEgY2hvZmVyZXMvYXl1ZGFudGVzIgoJCWpvYnMgLT4gd2hhdHNhcHAgIkVudsOtYSBub3RpZmljYWNpb25lcyIKCQlqb2JzIC0+IGdwcyAiUmVjaWJlIHViaWNhY2nDs24gLyBjb25zdWx0YSBjb29yZGVuYWRhcyIKCQlqb2JzIC0+IGRiICJBY3R1YWxpemEgZXZlbnRvcyB5IGVzdGFkb3MiCgkJam9icyAtPiBkb2NzICJSZWN1cGVyYSBkb2N1bWVudG9zIHBhcmEgZGlzdHJpYnVjacOzbiIKCQkKCQkvL2Nvb3JkZW5hZGFzIC0+IGNjYXBpICJFbnbDrWEgc29saWNpdHVkIGRlIGFjdHVhbGl6YWNpw7NuIGRlIGNvb3JkZW5hZGFzIHBhcmEgdmFsaWRhY2nDs24iCgkJZGFzaGJvYXJkIC0+IG1vbml0b3JlbyAiUHJlc2VudGEiCgkJCgkJLy9hc2lnbmFjaW9uZXMgLT4gc2FwICJPYnRpZW5lIHBlZGlkb3MsIHVuaWRhZGVzIHkgcmVzdHJpY2Npb25lcyIKCQkvLyBwYXRpbyAtPiBzYXAgIlJlY2liZSBldmVudG9zIGRlIGNhcmdhL2ZpbiBkZSBjYXJnYSIKCQlkb2N1bWVudGFsIC0+IGRvY3MgIkFsbWFjZW5hIGFyY2hpdm9zIgoJCWRvY3VtZW50YWwgLT4gaGlzdG9yaWNvICJSZWdpc3RyYSBldmVudG9zIGRvY3VtZW50YWxlcyIKCQltZW5zYWplcmlhIC0+IHdoYXRzYXBwICJOb3RpZmljYSBzYWxpZGEvcnV0YSIKCQltZW5zYWplcmlhIC0+IGhpc3RvcmljbyAiUmVnaXN0cmEgZW52w61vL2xlY3R1cmEiCgkJaW5jaWRlbmNpYXMgLT4gaGlzdG9yaWNvICJSZWdpc3RyYSBmYWxsYXMgeSBkZWNpc2lvbmVzIgoJCWluY2lkZW5jaWFzIC0+IG1vbml0b3JlbyAiUHVibGljYSBhbGVydGFzIgoJCS8vY2F0YWxvZ29zIC0+IHNhcCAiT2J0aWVuZSBjYXTDoWxvZ28gZGUgdW5pZGFkZXMiCgkJLy9hdGFsb2dvcyAtPiBzYXNpcCAiT2J0aWVuZSBjaG9mZXJlcyB5IGF5dWRhbnRlcyIKCQltb2JpbGUgLT4gZ3BzICJPYnRpZW5lIHViaWNhY2nDs24gYWN0dWFsIGRlbCBkaXNwb3NpdGl2byIKCQkKCQkvLyBoaXN0b3JpY28gLT4gZGIgIlBlcnNpc3RlIGV2ZW50b3MiCgkJbW9uaXRvcmVvIC0+IGRiICJDb25zdWx0YSBvcGVyYWNpw7NuIGNvbnNvbGlkYWRhIgoJCW1vbml0b3JlbyAtPiBncHMgIkNvbnN1bHRhIHViaWNhY2nDs24gZW4gdGllbXBvIHJlYWwiCgkJLy9tb25pdG9yZW8gLT4gc2FwICJDb25zdWx0YSBldmVudG9zIG9wZXJhdGl2b3MgcmVsZXZhbnRlcyIKCQlhc2lnbmFjaW9uZXMgLT4gY2F0YWxvZ29zICJDb25zdWx0YSBjYXTDoWxvZ29zIHkgZGlzcG9uaWJpbGlkYWQiCgkJYXNpZ25hY2lvbmVzIC0+IGhpc3RvcmljbyAiUmVnaXN0cmEgYXNpZ25hY2lvbmVzIHkgY2FtYmlvcyIKCQlwYXRpbyAtPiBoaXN0b3JpY28gIlJlZ2lzdHJhIG1vdmltaWVudG9zIGVuIHBhdGlvIgoJCWRvY3VtZW50YWwgLT4gaGlzdG9yaWNvICJSZWdpc3RyYSB2YWxpZGFjaW9uZXMgeSBjYW1iaW9zIgoJCWRvY3VtZW50YWwgLT4gZG9jcyAiQWxtYWNlbmEgeSByZWN1cGVyYSBhcmNoaXZvcyIKCQltZW5zYWplcmlhIC0+IGhpc3RvcmljbyAiUmVnaXN0cmEgZW52w61vLCBlbnRyZWdhIHkgbGVjdHVyYSIKCQlpbmNpZGVuY2lhcyAtPiBoaXN0b3JpY28gIlJlZ2lzdHJhIGZhbGxhcywgY2xhc2lmaWNhY2nDs24geSBkZWNpc2lvbmVzIgoJCWluY2lkZW5jaWFzIC0+IG1vbml0b3JlbyAiUHVibGljYSBhbGVydGFzIGUgaW5jaWRlbmNpYXMgYWN0aXZhcyIKCQkvLyBjb29yZGVuYWRhcyAtPiBoaXN0b3JpY28gIlJlZ2lzdHJhIHByb3B1ZXN0YXMgeSB2YWxpZGFjaW9uZXMiCgkJbW9uaXRvcmVvIC0+IGhpc3RvcmljbyAiQ29uc3VsdGEgdHJhemFiaWxpZGFkIGRlbCBwZWRpZG8iCgkJCgkJcmVjZXBjaW9uIC0+IHRyYXphYmlsaWRhZCAiUmVnaXN0cmEgc29saWNpdHVkIHJlY2liaWRhIgoJCXJlY2VwY2lvbiAtPiB2YWxpZGFjaW9uICJDYW5hbGl6YSBzb2xpY2l0dWQgcGFyYSByZXZpc2nDs24iCgkJLy9jYXB0dXJhTWFudWFsIC0+IHRyYXphYmlsaWRhZCAiUmVnaXN0cmEgc29saWNpdHVkIG1hbnVhbCIKCQkvLyBjYXB0dXJhTWFudWFsIC0+IHZhbGlkYWNpb24gIkNhbmFsaXphIHNvbGljaXR1ZCBtYW51YWwgcGFyYSByZXZpc2nDs24iCgkJCgkJdmFsaWRhY2lvbiAtPiB0cmF6YWJpbGlkYWQgIkFjdHVhbGl6YSBlc3RhdHVzIHkgY29tZW50YXJpb3MiCgkJLy8gdmFsaWRhY2lvbiAtPiBpbnRlZ3JhY2lvblNhcCAiU29saWNpdGEgZW52w61vIGRlIGNvb3JkZW5hZGFzIGFwcm9iYWRhcyIKCQl2YWxpZGFjaW9uIC0+IHBlbmRpZW50ZXNTYXAgIlB1YmxpY2EgY29vcmRlbmFkYSBhcHJvYmFkYSBwYXJhIGVudsOtbyBhIFNBUCIKCQlwZW5kaWVudGVzU2FwIC0+IGludGVncmFjaW9uU2FwICJFbnRyZWdhIGNvb3JkZW5hZGFzIGFwcm9iYWRhcyBwZW5kaWVudGVzIGRlIGVudsOtbyIKCQlwZW5kaWVudGVzU2FwIC0+IGNjZGIgIlBlcnNpc3RlIGV2ZW50b3MgcGVuZGllbnRlcywgaW50ZW50b3MsIGVycm9yZXMgeSBlc3RhdHVzIGRlIGludGVncmFjacOzbiIKCQlpbnRlZ3JhY2lvblNhcCAtPiBwZW5kaWVudGVzU2FwICJBY3R1YWxpemEgZXN0YXR1cyBkZSBlbnbDrW8sIGVycm9yIG8gcmVpbnRlbnRvIgoJCQoJCW91dGJveCAtPiBkYiAiUGVyc2lzdGUgZXZlbnRvcyBwZW5kaWVudGVzLCBlc3RhdHVzLCBuw7ptZXJvIGRlIGludGVudG9zIHkgZXJyb3JlcyIKCQkKCQlpbnRlZ3JhY2lvbkFzaW5jcm9uYSAtPiBvdXRib3ggIkxlZSBldmVudG9zIHBlbmRpZW50ZXMiCgkJaW50ZWdyYWNpb25Bc2luY3JvbmEgLT4gY2NhcGkgIkVudsOtYSBzb2xpY2l0dWQgZGUgY29vcmRlbmFkYXMgYWwgTWFuYWdlciBkZSBDcsOpZGl0byB5IENvYnJhbnphIgoJCS8vaW50ZWdyYWNpb25Bc2luY3JvbmEgLT4gc2FwICJTaW5jcm9uaXphIGRhdG9zIG1hZXN0cm9zL3J1dGFzIGRlc2RlIFNBUCBjdWFuZG8gZXhpc3RhIGNvbmVjdGl2aWRhZCIKCQlpbnRlZ3JhY2lvbkFzaW5jcm9uYSAtPiBkYiAiQWN0dWFsaXphIGVzdGF0dXMgbG9jYWwgc2Vnw7puIHJlc3VsdGFkbyBkZSBpbnRlZ3JhY2nDs24iCgkJaW50ZWdyYWNpb25Bc2luY3JvbmEgLT4gaGlzdG9yaWNvICJSZWdpc3RyYSBlbnbDrW8sIGVycm9yIG8gcmVpbnRlbnRvIgoJCQoJCQoJCS8vc2luY3Jvbml6YWNpb25Mb2NhbCAtPiBzYXAgIkNvbnN1bHRhIHRyYW5zcG9ydGVzLCBydXRhcywgY2xpZW50ZXMsIGludGVybG9jdXRvcmVzIHkgY29vcmRlbmFkYXMgYWN0dWFsZXMiCgkJc2luY3Jvbml6YWNpb25Mb2NhbCAtPiBkYiAiQWN0dWFsaXphIGNvcGlhIGxvY2FsIHNpbmNyb25pemFkYSIKCQlzaW5jcm9uaXphY2lvbkxvY2FsIC0+IG91dGJveCAiTGVlIGV2ZW50b3MgcGVuZGllbnRlcyBwYXJhIHJlcHJvY2VzYW1pZW50byIKCQloaXN0b3JpY28gLT4gZGIgIlBlcnNpc3RlIHRyYXphYmlsaWRhZCBvcGVyYXRpdmEiCgkJCgkJaW50ZWdyYWNpb25TYXAgLT4gc2FwICJFbnbDrWEgYWN0dWFsaXphY2nDs24gYXByb2JhZGEiCgkJaW50ZWdyYWNpb25TYXAgLT4gY2NkYiAiQWN0dWFsaXphIHJlc3VsdGFkbyBkZSBpbnRlZ3JhY2nDs24iCgkJdHJhemFiaWxpZGFkIC0+IGNjZGIgIkd1YXJkYSB5IGNvbnN1bHRhIHRyYXphYmlsaWRhZCIKCQl2YWxpZGFjaW9uIC0+IGNjZGIgIkNvbnN1bHRhIHNvbGljaXR1ZCB5IGVzdGF0dXMiCgkJcmVjZXBjaW9uIC0+IGNjZGIgIkd1YXJkYSBzb2xpY2l0dWQgaW5pY2lhbCIKCQkKCQkKCQlzYXAgLT4gaW50ZWdyYWNpb25TYXAgIkNvbmZpcm1hIHJlc3VsdGFkbyBkZSBhY3R1YWxpemFjacOzbiIKCQlzYXAgLT4gcmVjZXBjaW9uQXNpZ25hY2lvblNhcCAiRW52w61hIGFzaWduYWNpw7NuIGRlIGNob2ZlciwgdHJhbnNwb3J0ZSwgcnV0YSwgY2xpZW50ZXMgZSBpbnRlcmxvY3V0b3JlcyIKCQkvL2NhcHR1cmFNYW51YWwgLT4gY2NkYiAiR3VhcmRhIHNvbGljaXR1ZCBtYW51YWwiCgkJCgkJcmVjZXBjaW9uQXNpZ25hY2lvblNhcCAtPiBkYiAiR3VhcmRhIHRyYW5zcG9ydGUgYXNpZ25hZG8sIHJ1dGEsIGNsaWVudGVzLCBpbnRlcmxvY3V0b3JlcyB5IGNvb3JkZW5hZGFzIGFjdHVhbGVzIgoJCXJlY2VwY2lvbkFzaWduYWNpb25TYXAgLT4gaGlzdG9yaWNvICJSZWdpc3RyYSBldmVudG8gZGUgYXNpZ25hY2nDs24gcmVjaWJpZGEgZGVzZGUgU0FQIgoJCXJlY2VwY2lvbkFzaWduYWNpb25TYXAgLT4gc2luY3Jvbml6YWNpb25Mb2NhbCAiRW50cmVnYSBkYXRvcyByZWNpYmlkb3MgcGFyYSBub3JtYWxpemFjacOzbiB5IGFjdHVhbGl6YWNpw7NuIGxvY2FsIgoJCWFwaSAtPiByZWNlcGNpb24gIkVudsOtYSBzb2xpY2l0dWQgZGUgYWN0dWFsaXphY2nDs24gZGUgY29vcmRlbmFkYXMgcGFyYSB2YWxpZGFjacOzbiIKCQkKCQkKCX0KCQoJdmlld3MgewoJCXN5c3RlbUNvbnRleHQgdHJhbnNwb3J0ZSAiY29udGV4dG8tY2hvZmVyZXMiIHsKCQkJCgkJCWluY2x1ZGUgY2hvZmVyCgkJCS8vIGluY2x1ZGUgcGxhbmVhZG9yCgkJCWluY2x1ZGUgbWFuYWdlckNyZWRpdG9fY29icmFuemEKCQkJaW5jbHVkZSBUcmFuc3BvcnRlCgkJCWluY2x1ZGUgU0FQCgkJCWluY2x1ZGUgc2ljY29zCgkJCXRpdGxlICJDNCAtIG5pdmVsIDEgY29udGV4byB8IGNob2ZlciIKCQkJYXV0b2xheW91dCBscgoJCX0KCQljb250YWluZXIgdHJhbnNwb3J0ZSAic3ByaW50LW12cC1jaG9mZXItcnV0YS1jb29yZGVuYWRhcyIgewoJCQlpbmNsdWRlIGNob2ZlcgoJCQkvLyBpbmNsdWRlIHBsYW5lYWRvcgoJCQlpbmNsdWRlIG1vYmlsZQoJCQlpbmNsdWRlIGFwaQoJCQlpbmNsdWRlIGRiCgkJCWluY2x1ZGUgc2ljY29zCgkJCWluY2x1ZGUgbWFuYWdlckNyZWRpdG9fY29icmFuemEKCQkJaW5jbHVkZSBzYXAKCQkJLy9pbmNsdWRlIGdwcwoJCQkKCQkJYXV0b2xheW91dCBscgoJCQl0aXRsZSAiQzQgLSBTcHJpbnQgTVZQIENob2ZlciB8IExvZ2luLCBSdXRhIHkgQWN0dWFsaXphY2nDs24gZGUgQ29vcmRlbmFkYXMiCgkJfQoJCWNvbnRhaW5lciBtYW5hZ2VyQ3JlZGl0b19jb2JyYW56YSAic3ByaW50LW12cC1tYW5hZ2VyIiB7CgkJCQoJCQlpbmNsdWRlIGNjd2ViCgkJCWluY2x1ZGUgY2NhcGkKCQkJaW5jbHVkZSBjY2RiCgkJCWluY2x1ZGUgc2FwCgkJCS8vaW5jbHVkZSBncHMKCQkJaW5jbHVkZSB0cmFuc3BvcnRlCgkJCQoJCQlhdXRvbGF5b3V0IGxyCgkJCXRpdGxlICJDNCAtIFNwcmludCBNVlAgbWFuYWdlciB8IGFjdHVhbGl6YWNpb24gZGUgY29vcmRlbmFkYXMiCgkJfQoJCWNvbXBvbmVudCBhcGkgImNvbXBvbmVudGVzLWFwaS1tdnAiIHsKCQkJaW5jbHVkZSBjaG9mZXIKCQkJaW5jbHVkZSBtb2JpbGUKCQkJaW5jbHVkZSBhdXRlbnRpY2FjaW9uQ2hvZmVyCgkJCWluY2x1ZGUgcnV0YXNDaG9mZXIKCQkJaW5jbHVkZSBjb29yZGVuYWRhcwoJCQlpbmNsdWRlIHNpbmNyb25pemFjaW9uTG9jYWwKCQkJaW5jbHVkZSBvdXRib3gKCQkJaW5jbHVkZSBpbnRlZ3JhY2lvbkFzaW5jcm9uYQoJCQlpbmNsdWRlIGhpc3RvcmljbwoJCQlpbmNsdWRlIGRiCgkJCWluY2x1ZGUgY2NhcGkKCQkJaW5jbHVkZSBzYXAKCQkJaW5jbHVkZSBzaWNjb3MKCQkJCgkJCWF1dG9sYXlvdXQgbHIKCQkJdGl0bGUgIkM0IC0gTml2ZWwgMyBDb21wb25lbnRlcyB8IEJhY2tlbmQgVHJhbnNwb3J0ZSBNVlAgQXPDrW5jcm9ubyIKCQl9CgkJY29tcG9uZW50IGNjYXBpICJjb21wb25lbnRlcy1hcGlDcmVkaXRvLUNvYnJhbnphLW12cCIgewoJCQlpbmNsdWRlIHJlY2VwY2lvbgoJCQkKCQkJLy9pbmNsdWRlIGNhcHR1cmFNYW51YWwKCQkJaW5jbHVkZSB2YWxpZGFjaW9uCgkJCWluY2x1ZGUgdHJhemFiaWxpZGFkCgkJCWluY2x1ZGUgc2FwCgkJCWluY2x1ZGUgaW50ZWdyYWNpb25TYXAKCQkJaW5jbHVkZSBwZW5kaWVudGVzU2FwCgkJCWluY2x1ZGUgdHJhbnNwb3J0ZQoJCQlhdXRvbGF5b3V0IGxyCgkJCXRpdGxlICJDNCAtIE5pdmVsIDMgQ29tcG9uZW50ZXMgU3ByaW50IE1WUCBjaG9mZXIgIHwgQmFja2VuZCAvIEFQSSBkZSBDcmVkaXRvLUNvYnJhbnphICIKCQl9CgkJCgkJCgkJLy8gY29udGFpbmVyIHRyYW5zcG9ydGUgImNvbnRlbmVkb3JlcyIgewoJCQkvLyAgICAgaW5jbHVkZSAqCgkJCS8vICAgICBleGNsdWRlIGxpZGVyCgkJCS8vICAgICBleGNsdWRlIGNvb3JkaW5hZG9yCgkJCS8vICAgICBleGNsdWRlIHN1cGVydmlzb3IKCQkJLy8gICAgIGV4Y2x1ZGUgYW5hbGlzdGEKCQkJLy8gICAgIGV4Y2x1ZGUgcGxhbmVhZG9yCgkJCS8vICAgICBleGNsdWRlIGF1eGlsaWFyCgkJCS8vICAgICBleGNsdWRlIGNob2ZlcgoJCQkvLyAgICAgZXhjbHVkZSBnZXJlbnRlCgkJCS8vICAgICBleGNsdWRlIHRyYWZpY28KCQkJLy8gICAgIGV4Y2x1ZGUgdGFsbGVyCgkJCS8vICAgICAvL2V4Y2x1ZGUgLy9jYXZpCgkJCS8vICAgICBleGNsdWRlIGZsZXRlcmEKCQkJLy8gICAgIGF1dG9sYXlvdXQgbHIKCQkJLy8gICAgIHRpdGxlICJDNCAtIE5pdmVsIDIgQ29udGVuZWRvcmVzIHwgUGxhdGFmb3JtYSBkZSBUcmFuc3BvcnRlIgoJCQkvLyB9CgkJCS8vIGNvbnRhaW5lciB0cmFuc3BvcnRlICJjb250ZW5lZG9yZXMtbXZwX2Nob2ZlciJ7CgkJCQkvLyAgICAgLy9pbmNsdWRlIGNob2ZlcgoJCQkJLy8gICAgIGluY2x1ZGUgbWFuYWdlckNyZWRpdG9fY29icmFuemEKCQkJCS8vICAgICBpbmNsdWRlIFNBUAoJCQkJLy8gICAgIGluY2x1ZGUgQVBJCgkJCQkvLyAgICAgaW5jbHVkZSBtb2JpbGUKCQkJCS8vICAgICBpbmNsdWRlIFNBUAoJCQkJLy8gICAgIGluY2x1ZGUgY2NhcGkKCQkJCS8vICAgICBpbmNsdWRlIGNob2ZlcgoJCQkJLy8gICAgIC8vaW5jbHVkZSBwbGFuZWFkb3IKCQkJCS8vICAgICBpbmNsdWRlIHdlYmFwcAoJCQkJLy8gICAgIGF1dG9MYXlvdXQgbHIKCQkJCQoJCQkJLy8gICAgIHRpdGxlICJDNCAtIE5pdmVsIDIgQ29udGVuZWRvcmVzIHwgY2hvZmVyIgoJCQkJCgkJCQkvLyB9CgkJCQkKCQkJCQoJCQkJCgkJCQkKCQkJCQoJCQkJCgkJCQkKCQkJCS8vIGNvbXBvbmVudCBhcGkgImNvbXBvbmVudGVzLWFwaSIgewoJCQkJCS8vICAgICBpbmNsdWRlIGFzaWduYWNpb25lcwoJCQkJCS8vICAgICBpbmNsdWRlIHBhdGlvCgkJCQkJLy8gICAgIGluY2x1ZGUgZG9jdW1lbnRhbAoJCQkJCS8vICAgICBpbmNsdWRlIG1lbnNhamVyaWEKCQkJCQkvLyAgICAgaW5jbHVkZSBpbmNpZGVuY2lhcwoJCQkJCS8vICAgICBpbmNsdWRlIGNhdGFsb2dvcwoJCQkJCS8vICAgICAvLyBpbmNsdWRlIGNvb3JkZW5hZGFzCgkJCQkJLy8gICAgIGluY2x1ZGUgaGlzdG9yaWNvCgkJCQkJLy8gICAgIGluY2x1ZGUgbW9uaXRvcmVvCgkJCQkJLy8gICAgIGluY2x1ZGUgc2FwCgkJCQkJLy8gICAgIC8vaW5jbHVkZSBzYXNpcAoJCQkJCS8vICAgICBpbmNsdWRlIHdoYXRzYXBwCgkJCQkJLy8gICAgIGluY2x1ZGUgZ3BzCgkJCQkJLy8gICAgIGluY2x1ZGUgZGIKCQkJCQkvLyAgICAgaW5jbHVkZSBkb2NzCgkJCQkJLy8gICAgIGluY2x1ZGUgd2ViYXBwCgkJCQkJLy8gICAgIGluY2x1ZGUgbW9iaWxlCgkJCQkJLy8gICAgIGluY2x1ZGUgZGFzaGJvYXJkCgkJCQkJLy8gICAgIGluY2x1ZGUgYW5hbGlzdGEKCQkJCQkvLyAgICAgaW5jbHVkZSBzdXBlcnZpc29yCgkJCQkJLy8gICAgIGluY2x1ZGUgcGxhbmVhZG9yCgkJCQkJLy8gICAgIGluY2x1ZGUgY29vcmRpbmFkb3IKCQkJCQkvLyAgICAgaW5jbHVkZSBhdXhpbGlhcgoJCQkJCS8vICAgICBpbmNsdWRlIGNob2ZlcgoJCQkJCS8vICAgICBpbmNsdWRlIHRyYWZpY28KCQkJCQkvLyAgICAgaW5jbHVkZSB0YWxsZXIKCQkJCQkvLyAgICAgLy9pbmNsdWRlIC8vY2F2aQoJCQkJCS8vICAgICBhdXRvbGF5b3V0IGxyCgkJCQkJLy8gICAgIHRpdGxlICJDNCAtIE5pdmVsIDMgQ29tcG9uZW50ZXMgfCBCYWNrZW5kIC8gQVBJIGRlIFRyYW5zcG9ydGUiCgkJCQkJLy8gfQoJCQkJCQoJCQkJCQoJCQkJCS8vIGNvbXBvbmVudCBhcGkgIm1vZHVsby1hc2lnbmFjaW9uZXMiICJEZXRhbGxlIGRlbCBtw7NkdWxvIGRlIGFzaWduYWNpb25lcyIgewoJCQkJCQkvLyAgICAgaW5jbHVkZSBhc2lnbmFjaW9uZXMKCQkJCQkJLy8gICAgIGluY2x1ZGUgY2F0YWxvZ29zCgkJCQkJCS8vICAgICBpbmNsdWRlIGhpc3RvcmljbwoJCQkJCQkvLyAgICAgaW5jbHVkZSB3ZWJhcHAKCQkJCQkJLy8gICAgIC8vaW5jbHVkZSAqCgkJCQkJCS8vICAgICBhdXRvbGF5b3V0IGxyCgkJCQkJCS8vIH0KCQkJCQkJCgkJCQkJCS8vIGNvbXBvbmVudCBjY2FwaSAiYzMtYWN0dWFsaXphY2lvbi1jb29yZGVuYWRhcyIgewoJCQkJCQkJLy8gICAgIGluY2x1ZGUgcmVjZXBjaW9uCgkJCQkJCQkvLyAgICAgaW5jbHVkZSB2YWxpZGFjaW9uCgkJCQkJCQkvLyAgICAgaW5jbHVkZSBjYXB0dXJhTWFudWFsCgkJCQkJCQkvLyAgICAgaW5jbHVkZSB0cmF6YWJpbGlkYWQKCQkJCQkJCS8vICAgICBpbmNsdWRlIGludGVncmFjaW9uU2FwCgkJCQkJCQkvLyAgICAgaW5jbHVkZSBhcGkKCQkJCQkJCS8vICAgICBpbmNsdWRlIGNjd2ViCgkJCQkJCQkvLyAgICAgaW5jbHVkZSBjY2RiCgkJCQkJCQkvLyAgICAgaW5jbHVkZSBzYXAKCQkJCQkJCS8vICAgICBhdXRvbGF5b3V0IGxyCgkJCQkJCQkKCQkJCQkJCS8vICAgICB0aXRsZSAiQzQgLSBOaXZlbCAzIENvbXBvbmVudGVzIHwgQWN0dWFsaXphY2nDs24gZGUgY29vcmRlbmFkYXMiCgkJCQkJCQkvLyB9CgkJCQkJCQkKCQkJCQkJCQoJCQkJCQkJLy8gc3lzdGVtQ29udGV4dCB0cmFuc3BvcnRlICJjb250ZXh0by1HZW5lcmFsIiB7CgkJCQkJCQkJLy8gICAgIGluY2x1ZGUgKgoJCQkJCQkJCS8vICAgICBleGNsdWRlIGdlcmVudGUKCQkJCQkJCQkvLyAgICAgLy8gaW5jbHVkZSBjaG9mZXIKCQkJCQkJCQkvLyAgICAgYXV0b2xheW91dCBscgoJCQkJCQkJCS8vICAgICB0aXRsZSAiQzQgLSBOaXZlbCAxIENvbnRleHRvIHwgUGxhdGFmb3JtYSBkZSBUcmFuc3BvcnRlIgoJCQkJCQkJCS8vIH0KCQkJCQkJCQkKCQkJCQkJCQkKCQkJCQkJCQkKCQkJCQkJCQkKCQkJCQkJCQkKCQkJCQkJCQlzdHlsZXMgewoJCQkJCQkJCQllbGVtZW50ICJQZXJzb24iIHsKCQkJCQkJCQkJCWJhY2tncm91bmQgIzA4NDI3YgoJCQkJCQkJCQkJY29sb3IgI2ZmZmZmZgoJCQkJCQkJCQkJc2hhcGUgcGVyc29uCgkJCQkJCQkJCX0KCQkJCQkJCQkJZWxlbWVudCAiU29mdHdhcmUgU3lzdGVtIiB7CgkJCQkJCQkJCQliYWNrZ3JvdW5kICMxMTY4YmQKCQkJCQkJCQkJCWNvbG9yICNmZmZmZmYKCQkJCQkJCQkJfQoJCQkJCQkJCQllbGVtZW50ICJDb250YWluZXIiIHsKCQkJCQkJCQkJCWJhY2tncm91bmQgIzQzOGRkNQoJCQkJCQkJCQkJY29sb3IgI2ZmZmZmZgoJCQkJCQkJCQl9CgkJCQkJCQkJCWVsZW1lbnQgIkNvbXBvbmVudCIgewoJCQkJCQkJCQkJYmFja2dyb3VuZCAjODViYmYwCgkJCQkJCQkJCQljb2xvciAjMDAwMDAwCgkJCQkJCQkJCX0KCQkJCQkJCQkJZWxlbWVudCAiRGF0YWJhc2UiIHsKCQkJCQkJCQkJCXNoYXBlIEN5bGluZGVyCgkJCQkJCQkJCX0KCQkJCQkJCQkJZWxlbWVudCAiQVBJInsKCQkJCQkJCQkJCWJhY2tncm91bmQgIzJEN0ZGOQoJCQkJCQkJCQkJY29sb3IgI2ZmZmZmZgoJCQkJCQkJCQkJc2hhcGUgUm91bmRlZEJveAoJCQkJCQkJCQkJCgkJCQkJCQkJCX0KCQkJCQkJCQl9CgkJCQkJCQkJCgkJCQkJCQkJCgkJCQkJCQkJCgkJCQkJCQl9CgkJCQkJCQkKCQkJCQkJCQoJCQkJCQl9CgkJCQkJCQ==",
+    "structurizr.inspection.info" : "0",
+    "structurizr.inspection.ignore" : "0",
+    "structurizr.inspection.warning" : "0"
+  },
+  "views" : {
+    "componentViews" : [ {
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 50,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 100,
+        "vertices" : true
+      },
+      "containerId" : "28",
+      "elements" : [ {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "15",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "22",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "27",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "35",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "37",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "38",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "39",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "40",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "41",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "42",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "45",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "componentes-api-mvp",
+      "name" : "Component View: Plataforma de Transporte - API / Backend de Transporte",
+      "order" : 4,
+      "relationships" : [ {
+        "id" : "100"
+      }, {
+        "id" : "101"
+      }, {
+        "id" : "102"
+      }, {
+        "id" : "103"
+      }, {
+        "id" : "104"
+      }, {
+        "id" : "107"
+      }, {
+        "id" : "108"
+      }, {
+        "id" : "113"
+      }, {
+        "id" : "115"
+      }, {
+        "id" : "156"
+      }, {
+        "id" : "157"
+      }, {
+        "id" : "158"
+      }, {
+        "id" : "164"
+      }, {
+        "id" : "165"
+      }, {
+        "id" : "166"
+      }, {
+        "id" : "167"
+      }, {
+        "id" : "168"
+      }, {
+        "id" : "74"
+      }, {
+        "id" : "76"
+      }, {
+        "id" : "79"
+      }, {
+        "id" : "81"
+      }, {
+        "id" : "82"
+      }, {
+        "id" : "83"
+      }, {
+        "id" : "84"
+      }, {
+        "id" : "85"
+      } ],
+      "title" : "C4 - Nivel 3 Componentes | Backend Transporte MVP Asíncrono"
+    }, {
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 50,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 100,
+        "vertices" : true
+      },
+      "containerId" : "15",
+      "elements" : [ {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "16",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "17",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "18",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "20",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "25",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "componentes-apiCredito-Cobranza-mvp",
+      "name" : "Component View: Manager de Crédito y Cobranza - API Manager Crédito y Cobranza",
+      "order" : 5,
+      "relationships" : [ {
+        "id" : "106"
+      }, {
+        "id" : "149"
+      }, {
+        "id" : "150"
+      }, {
+        "id" : "151"
+      }, {
+        "id" : "152"
+      }, {
+        "id" : "153"
+      }, {
+        "id" : "155"
+      }, {
+        "id" : "169"
+      }, {
+        "id" : "174"
+      }, {
+        "id" : "180"
+      } ],
+      "title" : "C4 - Nivel 3 Componentes Sprint MVP chofer  | Backend / API de Credito-Cobranza "
+    } ],
+    "configuration" : {
+      "lastSavedView" : "contenedores",
+      "styles" : {
+        "elements" : [ {
+          "background" : "#2d7ff9",
+          "color" : "#ffffff",
+          "shape" : "RoundedBox",
+          "tag" : "API"
+        }, {
+          "background" : "#85bbf0",
+          "color" : "#000000",
+          "tag" : "Component"
+        }, {
+          "background" : "#438dd5",
+          "color" : "#ffffff",
+          "tag" : "Container"
+        }, {
+          "shape" : "Cylinder",
+          "tag" : "Database"
+        }, {
+          "background" : "#08427b",
+          "color" : "#ffffff",
+          "shape" : "Person",
+          "tag" : "Person"
+        }, {
+          "background" : "#1168bd",
+          "color" : "#ffffff",
+          "tag" : "Software System"
+        } ]
+      },
+      "terminology" : { }
+    },
+    "containerViews" : [ {
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 50,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 100,
+        "vertices" : true
+      },
+      "elements" : [ {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "13",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "22",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "27",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "28",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "45",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "sprint-mvp-chofer-ruta-coordenadas",
+      "name" : "Container View: Plataforma de Transporte",
+      "order" : 2,
+      "relationships" : [ {
+        "id" : "105"
+      }, {
+        "id" : "109"
+      }, {
+        "id" : "114"
+      }, {
+        "id" : "116"
+      }, {
+        "id" : "118"
+      }, {
+        "id" : "119"
+      }, {
+        "id" : "161"
+      }, {
+        "id" : "74"
+      }, {
+        "id" : "77"
+      }, {
+        "id" : "80"
+      }, {
+        "id" : "99"
+      } ],
+      "softwareSystemId" : "25",
+      "title" : "C4 - Sprint MVP Chofer | Login, Ruta y Actualización de Coordenadas"
+    }, {
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 50,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 100,
+        "vertices" : true
+      },
+      "elements" : [ {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "14",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "15",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "21",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "25",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "sprint-mvp-manager",
+      "name" : "Container View: Manager de Crédito y Cobranza",
+      "order" : 3,
+      "relationships" : [ {
+        "id" : "106"
+      }, {
+        "id" : "110"
+      }, {
+        "id" : "111"
+      }, {
+        "id" : "112"
+      }, {
+        "id" : "113"
+      }, {
+        "id" : "115"
+      }, {
+        "id" : "162"
+      } ],
+      "softwareSystemId" : "13",
+      "title" : "C4 - Sprint MVP manager | actualizacion de coordenadas"
+    } ],
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "edgeSeparation" : 50,
+        "nodeSeparation" : 50,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 100,
+        "vertices" : true
+      },
+      "elements" : [ {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "13",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "22",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "25",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "contexto-choferes",
+      "name" : "System Context View: Plataforma de Transporte",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "106"
+      }, {
+        "id" : "114"
+      }, {
+        "id" : "116"
+      }, {
+        "id" : "163"
+      }, {
+        "id" : "75"
+      }, {
+        "id" : "78"
+      } ],
+      "softwareSystemId" : "25",
+      "title" : "C4 - nivel 1 contexo | chofer"
+    } ]
+  }
+}
